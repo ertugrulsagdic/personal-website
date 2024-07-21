@@ -1,6 +1,23 @@
 import Image from "next/image";
+import ThemeSwitch from "../components/ThemeSwitch";
+import { Sun } from "@/components/icons/Sun";
+import { Moon } from "@/components/icons/Moon";
 
 export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      
+      <ThemeSwitch />
+      <div >
+        <h1>Title</h1>
+        <h2>Subtitle</h2>
+        <h3>Subsubtitle</h3>
+      </div>
+      
+      <div className="bg-black dark:bg-white w-16 h-16"></div>
+    </main>
+
+  )
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
