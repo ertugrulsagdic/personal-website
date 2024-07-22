@@ -1,19 +1,16 @@
 import Image from "next/image";
-import ThemeSwitch from "../components/ThemeSwitch";
-import { Sun } from "@/components/icons/Sun";
-import { Moon } from "@/components/icons/Moon";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       
-      <ThemeSwitch />
       <div >
         <h1>Title</h1>
         <h2>Subtitle</h2>
         <h3>Subsubtitle</h3>
       </div>
-      
+      <Link href="/about">asdasdasd</Link>
       <div className="bg-black dark:bg-white w-16 h-16"></div>
     </main>
 
