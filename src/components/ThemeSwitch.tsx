@@ -6,7 +6,7 @@ import { Sun } from './icons/Sun';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
-export default function ThemeSwitch() {
+export default function ThemeSwitch({ className, children }: { className?: string, children?: string }) {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -21,8 +21,9 @@ export default function ThemeSwitch() {
         console.log('Theme Switched');
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
-      className="dark:border-zinc-700 dark:bg-zinc-800 p-2 border shadow-lg rounded-full hover:bg-gray-200 dark:hover:bg-gray-800"
+      className={className}
     >
+      {children && <p>{children}</p>}
       {(resolvedTheme === 'dark') ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
     </button>
   );
