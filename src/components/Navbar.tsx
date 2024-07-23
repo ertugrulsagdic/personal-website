@@ -23,6 +23,8 @@ const links = [
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [render, setRender] = useState(isOpen);
+    const [isVisible, setIsVisible] = useState(true);
+    const [prevScroll, setPrevScroll] = useState(0);
 
     useEffect(() => {
         const timeoutId = window.setTimeout(() => {
@@ -31,10 +33,27 @@ export default function Navbar() {
         return () => clearTimeout(timeoutId);
     }, [isOpen, render]);
 
+    useEffect(() => {
+        function handleScroll() {
+            // if scroll down hide the navbar
+            // if scroll up show the navbar
+            if (window.scrollY > prevScroll) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+
+            setPrevScroll(window.scrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    },);
+
     const pathname = usePathname();
     return (
-        <header className="relative z-50 flex flex-col">
-            <div className='flex flex-rows my-4 gap-4 justify-center items-center'>
+        <header className={`sticky ${isVisible ? 'top-0' : ''} z-50 flex flex-col`}>
+            <div className='flex flex-rows my-4 justify-center items-center'>
                 <div className='flex-1' />
                 <MobileNavButton className='pointer-events-auto md:hidden ' onClick={() => setIsOpen(true)} />
                 <DesktopNavbar pathname={pathname} className='pointer-events-auto hidden md:block' />
@@ -102,7 +121,7 @@ function MobileDrawer({ isOpen, render, onClose }: { isOpen: boolean, render: bo
 
     return (
         (render || isOpen) && <div
-            className={`flex fixed top-0 right-0 w-full h-full backdrop-blur backdrop-brightness-50 justify-center
+            className={`md:hidden flex fixed top-0 right-0 w-full h-full backdrop-blur backdrop-brightness-50 justify-center
                  transition-opacity ease-out duration-300 ${render ? "opacity-100" : "opacity-0"}`}
         >
             <div className={`flex flex-col h-1/2 w-10/12 mt-8 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-50 dark:border-zinc-700
@@ -117,7 +136,7 @@ function MobileDrawer({ isOpen, render, onClose }: { isOpen: boolean, render: bo
                     {links.map((link) => {
                         return (
                             <div
-                                className='flex w-1/4 pt-2 items-center justify-center'
+                                className='flex w-1/2 sm:w-1/4 pt-2 items-center justify-center'
                                 key={link.name}>
                                 <NavItem
                                     link={link}
@@ -133,7 +152,7 @@ function MobileDrawer({ isOpen, render, onClose }: { isOpen: boolean, render: bo
                             </div>
                         );
                     })}
-                    <div key='Theme' className='flex w-1/4 p-2  items-center justify-center border-none rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white'>
+                    <div key='Theme' className='flex p-2  items-center justify-center border-none rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white'>
                         <li className=''>
                             <ThemeSwitch className="flex flex-row gap-1">Toggle Theme</ThemeSwitch>
                         </li>
