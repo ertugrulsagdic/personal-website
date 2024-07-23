@@ -23,27 +23,14 @@ export default function RootLayout({
       >
 
         <Providers>
-          <div>
-            <div className="fixed inset-0 flex justify-center sm:px-8">
-              <div className="flex w-full max-w-7xl lg:px-8">
-                <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
-              </div>
+          <div className="fixed inset-0 flex justify-center sm:px-8">
+            <div className="flex w-full max-w-7xl lg:px-8">
+              <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
             </div>
-
-            <div className="relative">
-              <div className='relative px-4 sm:px-8 lg:px-12'>
-                <div className="mx-auto max-w-2xl lg:max-w-5xl">
-                  <div className='sm:px-8' >
-                    <div className="mx-auto max-w-7xl lg:px-8">
-                      <Navbar />
-                      {children}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
+          </div>
+          <div className="relative sm:px-8">
+              <Navbar />
+              {children}
           </div>
         </Providers>
       </body>

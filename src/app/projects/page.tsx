@@ -1,4 +1,9 @@
+import Container from "@/components/Container"
 
 export default function Page() {
-    return <h1>This is projects page</h1>
+    return (
+        <Container>
+            <h1>This is Projects page</h1>
+        </Container>
+    )
 }

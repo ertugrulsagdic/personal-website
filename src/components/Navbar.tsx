@@ -11,10 +11,13 @@ import { Tools } from '@/components/icons/Tools';
 import { Menu } from './icons/Menu';
 import { Close } from './icons/Close';
 import { useEffect, useState } from 'react';
+import Container from './Container';
+import Image from 'next/image';
+import ProfilePicture from '../images/ertugrul.jpeg'
 
 const links = [
-    { name: 'Home', href: '/', icon: Home },
-    { name: 'Blog', href: '/blog', icon: Blog },
+    // { name: 'Home', href: '/', icon: Home },
+    { name: 'Articles', href: '/articles', icon: Blog },
     { name: 'Projects', href: '/projects', icon: Projects },
     { name: 'Tools', href: '/tools', icon: Tools },
     { name: 'Resume', href: '/resume', icon: () => null },
@@ -38,11 +41,12 @@ export default function Navbar() {
             // if scroll down hide the navbar
             // if scroll up show the navbar
             if (window.scrollY > prevScroll) {
+                console.log('scrolling down');
                 setIsVisible(false);
             } else {
+                console.log('scrolling up');
                 setIsVisible(true);
             }
-
             setPrevScroll(window.scrollY);
         };
 
@@ -52,20 +56,38 @@ export default function Navbar() {
 
     const pathname = usePathname();
     return (
-        <header className={`sticky ${isVisible ? 'top-0' : ''} z-50 flex flex-col`}>
-            <div className='flex flex-rows my-4 justify-center items-center'>
-                <div className='flex-1' />
-                <MobileNavButton className='pointer-events-auto md:hidden ' onClick={() => setIsOpen(true)} />
-                <DesktopNavbar pathname={pathname} className='pointer-events-auto hidden md:block' />
 
-                <div className='flex md:flex-1 justify-end '>
-                    <div className='hidden md:block'>
-                        <ThemeSwitch className="dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
+        <header className={`sticky ${isVisible ? 'top-0' : ''} z-50 flex justify-center flex-1 px-8`}>
+            <div className='max-w-7xl flex-1 px-4 sm:px-8 lg:px-24'>
+                <div className='flex flex-rows my-4'>
+                    <div className='flex-1' >
+                        <div
+                            className='h-12 w-12 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+                        >
+                            <Link href="/" aria-label={"Avatar Image"} className='pointer-events-auto'>
+                                <Image
+                                    src={ProfilePicture}
+                                    alt=""
+                                    className='rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 w-11 h-11'
+                                    priority
+                                    sizes="12rem"
+                                />
+                            </Link>
+                        </div>
                     </div>
+                    <MobileNavButton className='pointer-events-auto md:hidden ' onClick={() => setIsOpen(true)} />
+                    <DesktopNavbar pathname={pathname} className='pointer-events-auto hidden md:block' />
+
+                    <div className='flex md:flex-1 justify-end '>
+                        <div className='hidden md:block md:ml-4'>
+                            <ThemeSwitch className="dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <MobileDrawer isOpen={isOpen} render={render} onClose={() => setIsOpen(false)} />
-        </header>
+        </header >
     );
 }
 
