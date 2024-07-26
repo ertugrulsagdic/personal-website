@@ -13,7 +13,9 @@ import { Close } from './icons/Close';
 import { useEffect, useState } from 'react';
 import Container from './Container';
 import Image from 'next/image';
-import ProfilePicture from '../images/ertugrul.jpeg'
+import LogoLight from '../images/logo-light.png';
+import LogoDark from '../images/logo-dark.png';
+// import { useTheme } from 'next-themes';
 
 const links = [
     // { name: 'Home', href: '/', icon: Home },
@@ -28,6 +30,7 @@ export default function Navbar() {
     const [render, setRender] = useState(isOpen);
     const [isVisible, setIsVisible] = useState(true);
     const [prevScroll, setPrevScroll] = useState(0);
+    // const { resolvedTheme } = useTheme();
 
     useEffect(() => {
         const timeoutId = window.setTimeout(() => {
@@ -57,33 +60,42 @@ export default function Navbar() {
     const pathname = usePathname();
     return (
 
-        <header className={`sticky ${isVisible ? 'top-0' : ''} z-50 flex justify-center flex-1 px-8`}>
-            <div className='max-w-7xl flex-1 px-4 sm:px-8 lg:px-24'>
-                <div className='flex flex-rows my-4'>
-                    <div className='flex-1' >
-                        <div
-                            className='h-12 w-12 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
-                        >
-                            <Link href="/" aria-label={"Avatar Image"} className='pointer-events-auto'>
-                                <Image
-                                    src={ProfilePicture}
-                                    alt=""
-                                    className='rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 w-11 h-11'
-                                    priority
-                                    sizes="12rem"
-                                />
-                            </Link>
+        <header className={`sticky w-full ${isVisible ? 'top-0' : ''} z-50 flex justify-center flex-1`}>
+            <div className='flex-1 max-w-7xl lg:px-8'>
+                <div className="px-4 sm:px-8 lg:px-24">
+                    <div className='flex flex-row my-4'>
+                        <div className='flex flex-1 items-center' >
+                            <div
+                                className='h-12 w-12 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+                            >
+                                <Link href="/" aria-label={"Avatar Image"} className='pointer-events-auto'>
+                                    <Image
+                                        src={LogoDark}
+                                        alt=""
+                                        className='hidden dark:block rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 w-11 h-11'
+                                        priority
+                                        sizes="12rem"
+                                    />
+                                    <Image
+                                        src={LogoLight}
+                                        alt=""
+                                        className='dark:hidden rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 w-11 h-11'
+                                        priority
+                                        sizes="12rem"
+                                    />
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <MobileNavButton className='pointer-events-auto md:hidden ' onClick={() => setIsOpen(true)} />
-                    <DesktopNavbar pathname={pathname} className='pointer-events-auto hidden md:block' />
+                        <MobileNavButton className='pointer-events-auto md:hidden ' onClick={() => setIsOpen(true)} />
+                        <DesktopNavbar pathname={pathname} className='pointer-events-auto hidden md:block' />
 
-                    <div className='flex md:flex-1 justify-end '>
-                        <div className='hidden md:block md:ml-4'>
-                            <ThemeSwitch className="dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
+                        <div className='flex md:flex-1 justify-end '>
+                            <div className='hidden md:block md:ml-4'>
+                                <ThemeSwitch className="dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
             <MobileDrawer isOpen={isOpen} render={render} onClose={() => setIsOpen(false)} />

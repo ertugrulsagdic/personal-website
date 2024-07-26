@@ -1,13 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
-import Container from "@/components/Container";
-// import ProfilePicture from '../images/ertugrul.jpeg'
+import MainHeroSection from '@/components/sections/MainHeroSection';
+import AboutMeSection from '@/components/sections/AboutMeSection';
+import ExperienceSection from '@/components/sections/ExperienceSection';
+import ProjectsSection from '@/components/sections/ProjectsSection';
 
 export default function Home() {
   return (
-    <main >
-      <Container>
-        {/* <Image
+    <div>
+      <MainHeroSection />
+      <AboutMeSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      {/* <Image
           alt='Profile picture'
           // src='/ertugrul.jpeg'
           src={ProfilePicture}
@@ -16,30 +19,9 @@ export default function Home() {
           // sizes="(min-width: 1024px) 32rem, 32rem"
           className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
         /> */}
-        <div className="mt-16 sm:mt-32 h-96">
-          <h1>Main</h1>
-        </div>
+    </div>
 
-        <div className="mt-16 sm:mt-32 h-96">
-          <h1>Title</h1>
-        </div>
-        <div className="mt-16 sm:mt-32 h-96">
-          <h1>Title</h1>
-        </div>
-        <div className="mt-16 sm:mt-32 h-96">
-          <h1>Title</h1>
-        </div>
-        <div className="mt-16 sm:mt-32 h-96">
-          <h1>Title</h1>
-        </div>
-        <div className="mt-16 sm:mt-32 h-96">
-          <h1>Title</h1>
-        </div>
-        <div className="mt-16 sm:mt-32 h-96">
-          <h1>Title</h1>
-        </div>
-      </Container>
-    </main>
+
 
   );
 }
