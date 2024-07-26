@@ -5,6 +5,9 @@ import { GitHubIcon } from '@/components/icons/GitHubIcon';
 import { InstagramIcon } from '@/components/icons/InstagramIcon';
 import { XIcon } from '@/components/icons/XIcon';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
+// import Image from 'next/image'
+import ProfilePicture from '@/images/ertugrul.jpeg'
+
 
 const SocialMedia = [
     { name: 'Twitter', link: 'https://twitter.com/ertugrulsagdic', icon: XIcon },
@@ -15,9 +18,8 @@ const SocialMedia = [
 
 export default function MainHeroSection() {
     return (
-        <Container>
-            <div className="mt-16 sm:mt-32">
-
+        <Container className="mt-16 sm:mt-32">
+            <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center">
                 <div className="max-w-3xl space-y-6">
                     <div className="flex items-center space-x-2">
                         <p>Hi there </p>
@@ -52,6 +54,18 @@ export default function MainHeroSection() {
                             </li>
                         ))}
                     </ul>
+                </div>
+                <div className="lg:mx-auto max-w-xs lg:max-w-none">
+                    <Image
+                        alt='Profile picture'
+                        // src='/ertugrul.jpeg'
+                        src={ProfilePicture}
+                        width={450} height={450}
+                        loading="lazy"
+                        // sizes="(min-width: 1024px) 32rem, 32rem"
+                        className="rotate-3 aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                    />
+
                 </div>
             </div>
         </Container>

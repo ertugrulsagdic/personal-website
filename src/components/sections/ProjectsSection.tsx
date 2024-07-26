@@ -2,9 +2,9 @@ import Container from "@/components/Container"
 
 export default function WorkSection() {
     return (
-        <Container>
-            <div className="mt-16">
-                <h1>Work Section</h1>
+        <Container className="mt-16 sm:mt-32">
+            <div >
+                <h1>Some Projects I&apos;ve worked on</h1>
             </div>
         </Container>
     )
