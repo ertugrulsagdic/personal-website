@@ -8,8 +8,14 @@ import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 // import Image from 'next/image'
 import ProfilePicture from '@/images/ertugrul.jpeg'
 
+type SocialProfile = {
+    name: string;
+    link: string;
+    icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+};
 
-const SocialMedia = [
+
+const SocialMedia: SocialProfile[] = [
     { name: 'Twitter', link: 'https://twitter.com/ertugrulsagdic', icon: XIcon },
     { name: 'Instagram', link: 'https://www.instagram.com/ertugrulsagdic/', icon: InstagramIcon },
     { name: 'Github', link: 'https://github.com/ertugrulsagdic', icon: GitHubIcon },

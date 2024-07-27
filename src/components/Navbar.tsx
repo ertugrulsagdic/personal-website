@@ -91,7 +91,7 @@ export default function Navbar() {
 
                         <div className='flex md:flex-1 justify-end '>
                             <div className='hidden md:block md:ml-4'>
-                                <ThemeSwitch className="dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
+                                <ThemeSwitch className="bg-white dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
                             </div>
                         </div>
 
@@ -107,7 +107,7 @@ function DesktopNavbar({ pathname, className }: { pathname: string, className?: 
     return (
         <div className={className}>
             <nav>
-                <ul className='dark:bg-zinc-800 flex flex-row  space-x-2 px-4 py-2 border rounded-full shadow-lg dark:border-zinc-700'>
+                <ul className='bg-white dark:bg-zinc-800 flex flex-row  space-x-2 px-4 py-2 border rounded-full shadow-lg dark:border-zinc-700'>
                     {links.map((link) => {
                         return <NavItem
                             key={link.name}
