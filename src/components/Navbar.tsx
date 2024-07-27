@@ -13,8 +13,8 @@ import { Close } from './icons/Close';
 import { useEffect, useState } from 'react';
 import Container from './Container';
 import Image from 'next/image';
-import LogoLight from '../images/logo-light.png';
-import LogoDark from '../images/logo-dark.png';
+import LogoLight from '../images/logos/logo-light.png';
+import LogoDark from '../images/logos/logo-dark.png';
 // import { useTheme } from 'next-themes';
 
 const links = [
