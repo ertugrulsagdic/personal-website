@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import ThemeSwitch from "./ThemeSwitch";
 import clsx from 'clsx';
 import { Blog } from '@/components/icons/Blog';
@@ -239,17 +239,23 @@ function SelectLanguage({ className, children, locale }: {
     children?: string,
     locale: string
 }) {
+    const router = useRouter();
+
+    const changeUrl = (newLocale: string) => {   
+        let currentUrl = window.location.href;
+        let newUrl = currentUrl.replace(/\/(en|tr)(\/|)/, `/${newLocale}/`);
+        router.push(newUrl);
+    }
+
     const newLocale = locale === 'en' ? 'tr' : 'en';
-    let currentUrl = window.location.href;
-    let newUrl = currentUrl.replace(/\/(en|tr)(\/|)/, `/${newLocale}/`);
     return (
-        <Link
-            href={newUrl}
+        <button
+            onClick={() => changeUrl(newLocale)}
             className={className}
         >
             {children && <p>{children}:</p>}
             {newLocale.toUpperCase()} <LanguageIcon className='w-8 h-8' />
-        </Link>
+        </button>
     );
 }
 
