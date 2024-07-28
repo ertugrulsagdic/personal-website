@@ -18,7 +18,6 @@ export default function ThemeSwitch({ className, children }: { className?: strin
     <button
       aria-label="Switch to light mode"
       onClick={() => {
-        console.log('Theme Switched');
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
       className={className}

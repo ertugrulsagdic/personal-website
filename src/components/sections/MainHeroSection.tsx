@@ -7,12 +7,7 @@ import { XIcon } from '@/components/icons/XIcon';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 // import Image from 'next/image'
 import ProfilePicture from '@/images/ertugrul.jpeg'
-
-type SocialProfile = {
-    name: string;
-    link: string;
-    icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-};
+import { SocialProfile } from "@/util/dataTypes/socialProfile";
 
 
 const SocialMedia: SocialProfile[] = [
@@ -22,13 +17,21 @@ const SocialMedia: SocialProfile[] = [
     { name: 'LinkedIn', link: 'https://www.linkedin.com/in/ertugrulsagdic', icon: LinkedInIcon },
 ];
 
-export default function MainHeroSection() {
+export default function MainHeroSection({ translations }: {
+    translations: {
+        greeting: string;
+        title: string;
+        subtitle: string;
+        description: string;
+        pictureAlt: string;
+    }
+}) {
     return (
         <Container className="mt-16 sm:mt-32">
             <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12 items-center">
                 <div className="max-w-3xl space-y-6">
                     <div className="flex items-center space-x-2">
-                        <p>Hi there </p>
+                        <p>{translations.greeting}</p>
                         <Image
                             alt='Hi!'
                             src={Hi}
@@ -36,14 +39,11 @@ export default function MainHeroSection() {
                             loading="lazy"
                         />
                     </div>
-
-                    {/* <h1>Software designer, founder, and amateur astronaut.</h1> */}
                     <div>
-                        <h1>I&apos;m Ertugrul Sagdic </h1>
-                        <h2 className="text-zinc-600 dark:text-zinc-400">Software Engineer </h2>
+                        <h1>{translations.title}</h1>
+                        <h2 className="text-zinc-600 dark:text-zinc-400">{translations.subtitle}</h2>
                     </div>
-                    <p>
-                        I build software with a passion to make a meaningful impact with every line of code. My engineering journey is defined by pushing boundaries in research, progress, and continuous improvement.                    </p>
+                    <p>{translations.description}</p>
                     <ul className='mt-6 flex gap-4 flow-row'>
                         {SocialMedia.map((socialProfile) => (
                             <li
@@ -63,12 +63,10 @@ export default function MainHeroSection() {
                 </div>
                 <div className="lg:mx-auto max-w-xs lg:max-w-none">
                     <Image
-                        alt='Profile picture'
-                        // src='/ertugrul.jpeg'
+                        alt={translations.pictureAlt}
                         src={ProfilePicture}
                         width={450} height={450}
                         loading="lazy"
-                        // sizes="(min-width: 1024px) 32rem, 32rem"
                         className="rotate-3 aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
                     />
 

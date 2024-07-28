@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
-import "./globals.css";
-import { Providers } from "./providers";
+import "../globals.css";
+import { Providers } from "../providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import getLocale from "@/util/locales";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 
@@ -17,14 +18,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children, params
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const translations = getLocale(params.locale);
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={params.locale}>
       <body
         className={`flex h-full flex-col bg-zinc-50 dark:bg-black text-zinc-700 dark:text-zinc-300 antialiased`}
+        suppressHydrationWarning={true}
       >
 
         <Providers>
@@ -34,7 +38,7 @@ export default function RootLayout({
             </div>
           </div>
           <div className="relative sm:px-8">
-              <Navbar />
+              <Navbar locale={params.locale} translations={translations.navbar} />
               <main className="relative">
               {children}
             </main>

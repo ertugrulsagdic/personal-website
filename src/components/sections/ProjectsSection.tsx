@@ -1,110 +1,21 @@
 import Container from "@/components/Container"
 import { NewTabIcon } from "../icons/NewTabIcon";
 import Image from 'next/image';
+import { Project } from "@/util/dataTypes/project";
 
-
-type Project = {
-    title: string;
-    description: string;
-    link: Link;
-    techStack: string[];
-    logo?: string;
-}
-
-type Link = {
-    title: string;
-    url: string;
-    isIntenal?: boolean;
-}
-
-const Projects: Project[] = [
-    {
-        title: 'Portfolio Website',
-        description: 'Designed and developed a personal portfolio website using Next.js and Tailwind CSS.',
-        link: {
-            title: 'esagdic.com',
-            url: '',
-            isIntenal: true,
-        },
-        techStack: ['Next.js', 'Tailwind CSS', 'Typescript'],
-        logo: 'logo-dark.png',
-    },
-    {
-        title: 'DevGPT Mining Challenge',
-        description: 'Performed topic modeling on developer interactions with ChatGPT to identify common discussion themes.',
-        link: {
-            title: 'github.com',
-            url: 'https://github.com/ertugrulsagdic/mining-challange'
-        },
-        techStack: ['Python', 'Data Analysis', 'NLP'],
-    },
-    {
-        title: 'Cat Facts WebApp',
-        description: 'A website that displays random cat facts using HTMX and Flask by using the Cat Facts API.',
-        link: {
-            title: 'github.com',
-            url: 'https://github.com/ertugrulsagdic/cat-facts-app',
-        },
-        techStack: ['Python', 'Flask', 'HTMX'],
-    },
-    {
-        title: 'WaSeat Transport App',
-        description: 'Mobile app for tracking transportation routes and carbon footprint. Achieved 2nd place in the Flutter hackathon.',
-        link: {
-            title: 'github.com',
-            url: 'https://github.com/ertugrulsagdic/waseat',
-        },
-        techStack: ['Flutter', 'Dart', 'Firebase'],
-        logo: 'waseat-logo.png',
-    },
-    {
-        title: 'Flutter Code Generator',
-        description: 'A VS Code extension to automate Flutter architecture file generation for Flutter applications.',
-        link: {
-            title: 'github.com',
-            url: 'https://github.com/ertugrulsagdic/flutter_code_generator',
-        },
-        techStack: ['Javascript', 'VS Code Extension'],
-    },
-    {
-        title: 'Ahtapot Marin Website',
-        description: 'A responsive website with React, featuring product listings, and contact information.',
-        link: {
-            title: 'ahtopotmarin.com',
-            url: 'https://www.ahtopotmarin.com/',
-        },
-        techStack: ['React', 'CSS', 'Firebase'],
-        logo: 'ahtapotmarin-logo.png',
-    },
-    {
-        title: 'Cancer Detection using Gene Expressions',
-        description: 'Analyzed gene expression changes in thyroid cancer using data science techniques.',
-        link: {
-            title: 'github.com',
-            url: 'https://github.com/ertugrulsagdic/cancer-detection',
-        },
-        techStack: ['Python', 'Data Analysis', 'Machine Learning'],
-    },
-    {
-        title: 'CPU Digital Logic Design',
-        description: 'Basic CPU with 18-bit data size and 16 registers, capable of executing instruction sets using Verilog and Logism.',
-        link: {
-            title: 'github.com',
-            url: 'https://github.com/ertugrulsagdic/DigitalDesignProject',
-        },
-        techStack: ['Verilog', 'Logism', 'Digital Logic'],
+export default function WorkSection({ translations }: {
+    translations: {
+        title: string,
+        projects: Project[]
     }
-];
-
-
-export default function WorkSection() {
+}) {
     const imageContext = (require as any).context('@/images/logos', true);
     return (
         <Container className="mt-16 sm:mt-32">
             <div className="space-y-12">
-                <h1>Some Projects I&apos;ve worked on</h1>
+                <h1>{translations.title}</h1>
                 <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-y-12 gap-x-12 ">
-                    {Projects.map(async (project) => {
+                    {translations.projects.map(async (project) => {
                         const logo = project.logo ? imageContext(`./${project.logo}`).default : imageContext('./github.png').default;
 
                         return <div

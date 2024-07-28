@@ -2,91 +2,25 @@
 
 import Container from "@/components/Container"
 import { useState } from 'react';
+import { Experience } from "@/util/dataTypes/experiences";
 
-type Experience = {
-    company: string;
-    companyLink?: string;
-    position: string;
-    date: string;
-    bullets: Bullet[];
-}
 
-type Bullet = {
-    description: string;
-    subDescriptions?: string[];
-}
-
-const Experiences: Experience[] = [
-    {
-        company: 'Lamar University',
-        companyLink: 'https://www.lamar.edu/arts-sciences/computer-science/index.html',
-        position: 'Research Assistant',
-        date: 'January 2023 - Present',
-        bullets: [
-            {
-                description: 'Development and Analysis of Anomaly Detection Systems for Buckeye Partners Supervised by Dr. Zhang:',
-                subDescriptions: [
-                    'Collaborated with Buckeye to analyze pump sensor data, achieving a comprehensive dataset for anomaly detection.',
-                    'Developed and fine-tuned various machine learning models for real-time anomaly detection, using a verified dataset.',
-                    'Implemented a web-based UI with RESTful APIs, enabling predictive maintenance alerts based on model outputs.',
-                ],
-            },
-            {
-                description: 'Development of Dataset Generator and Evaluation of Deep Learning Models Supervised by Dr. Kockara',
-                subDescriptions: [
-                    'Engineered TBPGen with C# and Unity Engine, generating 1,398 diverse total body photography images.',
-                    'Evaluated skin lesion detection and segmentation using Python/Pytorch across 13 deep learning models.',
-                    'Achieved 90% of IoU and F1 scores, demonstrating the TBPGen dataset’s enhancement in detection and segmentation accuracy.',
-                ]
-            }
-        ]
-    },
-    {
-        company: 'MDP Group',
-        companyLink: 'https://www.mdpgroup.com/',
-        position: 'Full Stack Software Engineer',
-        date: 'July 2021 - January 2023',
-        bullets: [
-            {
-                description: 'Engineered the Continuous Improvement Software as a full-stack engineer using Node JS and React JS, serving over 1,000 users across four companies.',
-            },
-            {
-                description: 'Implemented Suggestion, Kaizen, and Near Miss workflows that transitioned processes to paperless and reducing process time by 60%.',
-            },
-            {
-                description: 'Designed and maintained over 200 JSON APIs and 25+ user interfaces, enhancing system interactivity and user experience.',
-            },
-            {
-                description: 'Managed the project with Jira using agile methodologies, leading the team to achieve 100% on-time task delivery and a 25% increase in productivity.',
-            }
-        ]
-    },
-    {
-        company: 'Crenno',
-        position: 'Mobile Software Engineer',
-        date: 'November 2020 - April 2021',
-        bullets: [
-            {
-                description: 'Designed and implemented 15+ user interfaces for mobile applications using Dart/Flutter, enhancing user interaction and engagement.',
-            },
-            {
-                description: 'Acquired in-depth knowledge and practical expertise in Git for version control, significantly enhancing team workflow and reducing merge conflicts by 60%.',
-            }
-        ]
-    },
-]
-
-export default function ExperienceSection() {
+export default function ExperienceSection({translations} : {
+    translations: {
+        title: string;
+        experiences: readonly Experience[];
+    }
+}) {
     const [currentExperience, setCurrentExperience] = useState(0);
 
     return (
         <Container className="mt-16 sm:mt-32">
             <div className="space-y-8">
-                <h1>My Professional experience</h1>
+                <h1>{translations.title}</h1>
                 <div className="lg:grid lg:grid-cols-4 space-y-8 lg:space-y-0 lg:space-x-4">
                     <div
                         className="flex flex-rows lg:flex-col overflow-x-auto [&::-webkit-scrollbar]:hidden">
-                        {Experiences.map((experience, index) => (
+                        {translations.experiences.map((experience, index) => (
                             <button
                                 key={experience.company}
                                 className={`space-y-2 ring-color-500 border-b py-4 px-6 dark:hover:bg-zinc-700 hover:bg-zinc-200 hover:text-black dark:hover:text-white
@@ -99,7 +33,7 @@ export default function ExperienceSection() {
                             </button>
                         ))}
                     </div>
-                    {Experiences.map((experience, index) => (
+                    {translations.experiences.map((experience, index) => (
                         <div
                             key={experience.company}
                             className={`lg:ml-8 animate-fade col-span-3 space-y-4 ${currentExperience === index ? '' : 'hidden'}`}

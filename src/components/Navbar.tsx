@@ -4,32 +4,40 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeSwitch from "./ThemeSwitch";
 import clsx from 'clsx';
-import { Home } from '@/components/icons/Home';
 import { Blog } from '@/components/icons/Blog';
 import { Projects } from '@/components/icons/Projects';
 import { Tools } from '@/components/icons/Tools';
 import { Menu } from './icons/Menu';
 import { Close } from './icons/Close';
 import { useEffect, useState } from 'react';
-import Container from './Container';
 import Image from 'next/image';
 import LogoLight from '../images/logos/logo-light.png';
 import LogoDark from '../images/logos/logo-dark.png';
-// import { useTheme } from 'next-themes';
+import { NavbarLink } from '@/util/dataTypes/navbarLinks';
+import { LanguageIcon } from './icons/LanguageIcon';
 
-const links = [
-    // { name: 'Home', href: '/', icon: Home },
-    { name: 'Articles', href: '/articles', icon: Blog },
-    { name: 'Projects', href: '/projects', icon: Projects },
-    { name: 'Tools', href: '/tools', icon: Tools },
-    { name: 'Resume', href: '/resume', icon: () => null },
-];
-
-export default function Navbar() {
+export default function Navbar({ locale, translations }: {
+    locale: string,
+    translations: {
+        articles: string,
+        projects: string,
+        tools: string,
+        resume: string,
+        toggleTheme: string,
+        changeLanguage: string
+    }
+}) {
     const [isOpen, setIsOpen] = useState(false);
     const [render, setRender] = useState(isOpen);
     const [isVisible, setIsVisible] = useState(true);
     const [prevScroll, setPrevScroll] = useState(0);
+
+    const links: NavbarLink[] = [
+        { name: translations.articles, href: '/articles', icon: Blog },
+        { name: translations.projects, href: '/projects', icon: Projects },
+        { name: translations.tools, href: '/tools', icon: Tools },
+        { name: translations.resume, href: '/resume', icon: () => null },
+    ];
     // const { resolvedTheme } = useTheme();
 
     useEffect(() => {
@@ -44,10 +52,8 @@ export default function Navbar() {
             // if scroll down hide the navbar
             // if scroll up show the navbar
             if (window.scrollY > prevScroll) {
-                console.log('scrolling down');
                 setIsVisible(false);
             } else {
-                console.log('scrolling up');
                 setIsVisible(true);
             }
             setPrevScroll(window.scrollY);
@@ -58,6 +64,7 @@ export default function Navbar() {
     },);
 
     const pathname = usePathname();
+
     return (
 
         <header className={`sticky w-full ${isVisible ? 'top-0' : ''} z-50 flex justify-center flex-1`}>
@@ -87,10 +94,13 @@ export default function Navbar() {
                             </div>
                         </div>
                         <MobileNavButton className='pointer-events-auto md:hidden ' onClick={() => setIsOpen(true)} />
-                        <DesktopNavbar pathname={pathname} className='pointer-events-auto hidden md:block' />
+                        <DesktopNavbar links={links} pathname={pathname} className='ml-1 pointer-events-auto hidden md:block' />
 
                         <div className='flex md:flex-1 justify-end '>
-                            <div className='hidden md:block md:ml-4'>
+                            <div className='hidden md:block md:ml-1'>
+                                <SelectLanguage className="flex items-center gap-1 py-2 px-3 bg-white dark:border-zinc-700 dark:bg-zinc-800 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" locale={locale} />
+                            </div>
+                            <div className='hidden md:block md:ml-2'>
                                 <ThemeSwitch className="bg-white dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
                             </div>
                         </div>
@@ -98,12 +108,19 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            <MobileDrawer isOpen={isOpen} render={render} onClose={() => setIsOpen(false)} />
+            <MobileDrawer locale={locale} translations={{
+                changeLanguageString: translations.changeLanguage,
+                toggleThemeString: translations.toggleTheme
+            }} links={links} isOpen={isOpen} render={render} onClose={() => setIsOpen(false)} />
         </header >
     );
 }
 
-function DesktopNavbar({ pathname, className }: { pathname: string, className?: string }) {
+function DesktopNavbar({ links, pathname, className }: {
+    links: NavbarLink[],
+    pathname: string,
+    className?: string
+}) {
     return (
         <div className={className}>
             <nav>
@@ -123,7 +140,6 @@ function DesktopNavbar({ pathname, className }: { pathname: string, className?: 
                     })}
                 </ul>
             </nav>
-
         </div>
     );
 }
@@ -150,15 +166,30 @@ function MobileNavButton({
 
 }
 
-function MobileDrawer({ isOpen, render, onClose }: { isOpen: boolean, render: boolean, onClose: () => void }) {
+function MobileDrawer({ locale, links, translations, isOpen, render, onClose }: {
+    locale: string,
+    links: NavbarLink[],
+    translations: {
+        changeLanguageString: string,
+        toggleThemeString: string,
+    },
+    isOpen: boolean,
+    render: boolean,
+    onClose: () => void
+}) {
     const pathname = usePathname();
 
     return (
         (render || isOpen) && <div
-            className={`md:hidden flex fixed top-0 right-0 w-full h-full backdrop-blur backdrop-brightness-50 justify-center
+            className={`md:hidden flex fixed top-0 right-0 z-0 w-full h-full backdrop-blur backdrop-brightness-50 justify-center
                  transition-opacity ease-out duration-300 ${render ? "opacity-100" : "opacity-0"}`}
+            onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                    onClose();
+                }
+            }}
         >
-            <div className={`flex flex-col h-1/2 w-10/12 mt-8 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-50 dark:border-zinc-700
+            <div className={`relative flex flex-col z-10 h-fit w-10/12 mt-8 pb-16 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-50 dark:border-zinc-700
                 `}
             >
                 <div className='flex justify-end p-6'>
@@ -170,7 +201,7 @@ function MobileDrawer({ isOpen, render, onClose }: { isOpen: boolean, render: bo
                     {links.map((link) => {
                         return (
                             <div
-                                className='flex w-1/2 sm:w-1/4 pt-2 items-center justify-center'
+                                className='flex w-1/2 sm:w-1/3 pt-2 items-center justify-center'
                                 key={link.name}>
                                 <NavItem
                                     link={link}
@@ -186,15 +217,39 @@ function MobileDrawer({ isOpen, render, onClose }: { isOpen: boolean, render: bo
                             </div>
                         );
                     })}
-                    <div key='Theme' className='flex p-2  items-center justify-center border-none rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white'>
-                        <li className=''>
-                            <ThemeSwitch className="flex flex-row gap-1">Toggle Theme</ThemeSwitch>
+                    <div key='Language' className='flex items-center justify-center border-none rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white'>
+                        <li>
+                            <SelectLanguage className='flex flex-row gap-1 items-center p-2' locale={locale}>{translations.changeLanguageString}</SelectLanguage>
+                        </li>
+                    </div>
+                    <div key='Theme' className='flex items-center justify-center border-none rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white'>
+                        <li>
+                            <ThemeSwitch className="flex p-2 flex-row gap-1">{translations.toggleThemeString}</ThemeSwitch>
                         </li>
                     </div>
                 </ul>
             </div>
 
         </div>
+    );
+}
+
+function SelectLanguage({ className, children, locale }: {
+    className?: string,
+    children?: string,
+    locale: string
+}) {
+    const newLocale = locale === 'en' ? 'tr' : 'en';
+    let currentUrl = window.location.href;
+    let newUrl = currentUrl.replace(/\/(en|tr)(\/|)/, `/${newLocale}/`);
+    return (
+        <Link
+            href={newUrl}
+            className={className}
+        >
+            {children && <p>{children}:</p>}
+            {newLocale.toUpperCase()} <LanguageIcon className='w-8 h-8' />
+        </Link>
     );
 }
 
