@@ -97,8 +97,8 @@ export default function Navbar({ locale, translations }: {
                         <DesktopNavbar links={links} pathname={pathname} className='ml-1 pointer-events-auto hidden md:block' />
 
                         <div className='flex md:flex-1 justify-end '>
-                            <div className='hidden md:block md:ml-1'>
-                                <SelectLanguage className="flex items-center gap-1 py-2 px-3 bg-white dark:border-zinc-700 dark:bg-zinc-800 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" locale={locale} />
+                            <div className='hidden md:block md:ml-2'>
+                                <SelectLanguage className="flex items-center gap-1 p-3 bg-white dark:border-zinc-700 dark:bg-zinc-800 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" locale={locale} />
                             </div>
                             <div className='hidden md:block md:ml-2'>
                                 <ThemeSwitch className="bg-white dark:border-zinc-700 dark:bg-zinc-800 p-3 border shadow-lg rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:hover:text-white" />
@@ -251,10 +251,14 @@ function SelectLanguage({ className, children, locale }: {
     return (
         <button
             onClick={() => changeUrl(newLocale)}
-            className={className}
+            className={clsx(
+                `${children ? "" : "[&>p]:hidden [&>p]:hover:block duration-300 ease-in-out"}`,
+                className)
+            }
         >
             {children && <p>{children}:</p>}
-            {newLocale.toUpperCase()} <LanguageIcon className='w-8 h-8' />
+            <p className=''>{newLocale.toUpperCase()}</p> 
+            <LanguageIcon className='w-6 h-6' />
         </button>
     );
 }

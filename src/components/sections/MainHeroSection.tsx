@@ -37,6 +37,7 @@ export default function MainHeroSection({ translations }: {
                             src={Hi}
                             width={25} height={25}
                             loading="lazy"
+                            unoptimized
                         />
                     </div>
                     <div>

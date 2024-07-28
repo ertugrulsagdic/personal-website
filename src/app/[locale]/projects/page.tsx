@@ -1,9 +1,17 @@
 import Container from "@/components/Container"
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import getLocale from "@/util/locales";
 
-export default function Page() {
+export default async function Page({ params: { locale } }: { params: { locale: string } }) {
+    const translations = await getLocale(locale);
+
     return (
-        <Container>
-            <h1>This is Projects page</h1>
-        </Container>
+        <div>
+            <ProjectsSection 
+                title={translations.home.projects.title}
+                projects={translations.allProjects.projects}
+            />
+
+        </div>
     )
 }

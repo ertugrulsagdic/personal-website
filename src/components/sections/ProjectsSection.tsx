@@ -3,19 +3,18 @@ import { NewTabIcon } from "../icons/NewTabIcon";
 import Image from 'next/image';
 import { Project } from "@/util/dataTypes/project";
 
-export default function WorkSection({ translations }: {
-    translations: {
-        title: string,
-        projects: Project[]
-    }
+export default function WorkSection({ title, subtitle, projects }: {
+    title?: string,
+    subtitle?: string,
+    projects: Project[]
 }) {
     const imageContext = (require as any).context('@/images/logos', true);
     return (
         <Container className="mt-16 sm:mt-32">
             <div className="space-y-12">
-                <h1>{translations.title}</h1>
+                <h1>{title}</h1>
                 <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-y-12 gap-x-12 ">
-                    {translations.projects.map(async (project) => {
+                    {projects.map(async (project) => {
                         const logo = project.logo ? imageContext(`./${project.logo}`).default : imageContext('./github.png').default;
 
                         return <div

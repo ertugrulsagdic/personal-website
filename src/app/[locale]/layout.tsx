@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   description: "Personal website of Ertugrul Sagdic, software engineer",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children, params
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const translations = getLocale(params.locale);
+  const translations = await getLocale(params.locale);
   return (
     <html lang={params.locale}>
       <body
@@ -42,7 +42,7 @@ export default function RootLayout({
               <main className="relative">
               {children}
             </main>
-            <Footer />
+            <Footer translations={translations.footer} />
           </div>
         </Providers>
       </body>

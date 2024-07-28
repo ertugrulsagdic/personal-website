@@ -5,15 +5,18 @@ import ProjectsSection from '@/components/sections/ProjectsSection';
 import getLocale from '@/util/locales/index';
 
 
-export default function Home({params: {locale}} : {params: {locale: string}}) {
-  const translations = getLocale(locale);
+export default async function Home({ params: { locale } }: { params: { locale: string } }) {
+  const translations = await getLocale(locale);
 
   return (
     <div>
       <MainHeroSection translations={translations.home.hero} />
       <AboutMeSection translations={translations.home.aboutMe} />
       <ExperienceSection translations={translations.home.experience} />
-      <ProjectsSection translations={translations.home.projects} />
+      <ProjectsSection
+        title={translations.home.projects.title}
+        projects={translations.allProjects.projects}
+      />
     </div>
 
 

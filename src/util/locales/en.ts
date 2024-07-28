@@ -98,86 +98,153 @@ export default {
         },
         projects: {
             title: "Some Projects I've worked on",
-            projects: [
-                {
-                    title: "Portfolio Website",
-                    description: "Designed and developed a personal portfolio website using Next.js and Tailwind CSS.",
-                    link: {
-                        title: "esagdic.com",
-                        url: "",
-                        isIntenal: true,
-                    },
-                    techStack: ["Next.js", "Tailwind CSS", "Typescript"],
-                    logo: "logo-dark.png",
-                },
-                {
-                    title: "DevGPT Mining Challenge",
-                    description: "Performed topic modeling on developer interactions with ChatGPT to identify common discussion themes.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/mining-challange"
-                    },
-                    techStack: ["Python", "Data Analysis", "NLP"],
-                },
-                {
-                    title: "Cat Facts WebApp",
-                    description: "A website that displays random cat facts using HTMX and Flask by using the Cat Facts API.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/cat-facts-app",
-                    },
-                    techStack: ["Python", "Flask", "HTMX"],
-                },
-                {
-                    title: "WaSeat Transport App",
-                    description: "Mobile app for tracking transportation routes and carbon footprint. Achieved 2nd place in the Flutter hackathon.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/waseat",
-                    },
-                    techStack: ["Flutter", "Dart", "Firebase"],
-                    logo: "waseat-logo.png",
-                },
-                {
-                    title: "Flutter Code Generator",
-                    description: "A VS Code extension to automate Flutter architecture file generation for Flutter applications.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/flutter_code_generator",
-                    },
-                    techStack: ["Javascript", "VS Code Extension"],
-                },
-                {
-                    title: "Ahtapot Marin Website",
-                    description: "A responsive website with React, featuring product listings, and contact information.",
-                    link: {
-                        title: "ahtopotmarin.com",
-                        url: "https://www.ahtopotmarin.com/",
-                    },
-                    techStack: ["React", "CSS", "Firebase"],
-                    logo: "ahtapotmarin-logo.png",
-                },
-                {
-                    title: "Cancer Detection using Gene Expressions",
-                    description: "Analyzed gene expression changes in thyroid cancer using data science techniques.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/cancer-detection",
-                    },
-                    techStack: ["Python", "Data Analysis", "Machine Learning"],
-                },
-                {
-                    title: "CPU Digital Logic Design",
-                    description: "Basic CPU with 18-bit data size and 16 registers, capable of executing instruction sets using Verilog and Logism.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/DigitalDesignProject",
-                    },
-                    techStack: ["Verilog", "Logism", "Digital Logic"],
-                }
-
-            ] as Project[],
         }
+    },
+    allProjects: {
+        projects: [
+            {
+                title: "Portfolio Website",
+                description: "Designed and developed a personal portfolio website using Next.js and Tailwind CSS.",
+                link: {
+                    title: "esagdic.com",
+                    url: "",
+                    isIntenal: true,
+                },
+                techStack: ["Next.js", "Tailwind CSS", "Typescript"],
+                logo: "logo-dark.png",
+            },
+            {
+                title: "DevGPT Mining Challenge",
+                description: "Performed topic modeling on developer interactions with ChatGPT to identify common discussion themes.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/mining-challange"
+                },
+                techStack: ["Python", "Data Analysis", "NLP"],
+            },
+            {
+                title: "Cat Facts WebApp",
+                description: "A website that displays random cat facts using HTMX and Flask by using the Cat Facts API.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/cat-facts-app",
+                },
+                techStack: ["Python", "Flask", "HTMX"],
+            },
+            {
+                title: "WaSeat Transport App",
+                description: "Mobile app for tracking transportation routes and carbon footprint. Achieved 2nd place in the Flutter hackathon.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/waseat",
+                },
+                techStack: ["Flutter", "Dart", "Firebase"],
+                logo: "waseat-logo.png",
+            },
+            {
+                title: "Flutter Code Generator",
+                description: "A VS Code extension to automate Flutter architecture file generation for Flutter applications.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/flutter_code_generator",
+                },
+                techStack: ["Javascript", "VS Code Extension"],
+            },
+            {
+                title: "Ahtapot Marin Website",
+                description: "A responsive website with React, featuring product listings, and contact information.",
+                link: {
+                    title: "ahtopotmarin.com",
+                    url: "https://www.ahtopotmarin.com/",
+                },
+                techStack: ["React", "CSS", "Firebase"],
+                logo: "ahtapotmarin-logo.png",
+            },
+
+        ] as Project[],
+        undergradProjects: [
+            {
+                title: "Cancer Detection using Gene Expressions",
+                description: "Implemented cancer classification models using K-NN and Neural Network algorithms, and explored differentially expressed genes using the Rain Forest Algorithm.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/cancer-detection"
+                },
+                techStack: ["Python", "Machine Learning", "Data Analysis"],
+            },
+            {
+                title: "Multithreaded Web Server",
+                description: "An HTTP multithreaded web server that dynamically creates HTML objects based on client requests, including a proxy server for caching.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/Multithreaded-Web-Server"
+                },
+                techStack: ["Python", "Networking"],
+            },
+            {
+                title: "CPU Digital Logic Design",
+                description: "Basic CPU with 18-bit data size and 16 registers, capable of executing instruction sets using Verilog and Logism.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/DigitalDesignProject",
+                },
+                techStack: ["Verilog", "Logism", "Digital Logic"],
+            },
+            {
+                title: "Park It Analysis and Design",
+                description: "Designed the roadmap for 'Park It' app using the waterfall methodology, covering planning, analysis, design, and implementation stages.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/park-it-analysis-and-design"
+                },
+                techStack: ["Flutter", "Project Management"],
+            },
+            {
+                title: "Reinforcement Learning Prioritized Sweeping",
+                description: "Developed a reinforcement learning agent using the Prioritized Sweeping algorithm for navigating a grid world map.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/Cliff-Walking-Prioritized-Sweeping"
+                },
+                techStack: ["Python", "Reinforcement Learning"],
+            },
+            {
+                title: "Online Attendance System",
+                description: "An attendance management app for schools, using QR code scanning for attendance, with features for announcements and document uploads.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/OASYS"
+                },
+                techStack: ["React Native", "Firebase"],
+            },
+            {
+                title: "Database and Web Application of an Airport",
+                description: "Developed a database and web application for managing airport data, using MSSQL, HTML, CSS, and JavaScript with an MVC pattern.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/AirportDatabase"
+                },
+                techStack: ["SQL", "HTML", "CSS", "JavaScript"],
+            },
+            {
+                title: "Monopoly Game",
+                description: "Developed a simulation of the Monopoly game in Java using object-oriented principles, with iterative and evolutionary development.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/MonopolyGame"
+                },
+                techStack: ["Java", "Software Development"],
+            },
+            {
+                title: "Thread Synchronization and My Own Shell",
+                description: "Implemented thread synchronization and developed a custom shell in C on Linux, featuring several bespoke commands and functionalities.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/OperatingSystemsProjects"
+                },
+                techStack: ["C", "Systems Programming"],
+            }
+        ] as Project[],
     },
     articles: {
         hero: {
@@ -185,4 +252,26 @@ export default {
             description: "I write about software engineering, machine learning, and personal development. Here are some of my latest articles:"
         }
     },
+    projects: {
+        hero: {
+            title: "Projects",
+            description: "Here are some of the projects I've worked on. Click on the cards to learn more about each project."
+        },
+    },
+    tools: {
+        hero: {
+            title: "Tools",
+            description: "Here are some of the tools I use in my daily workflow:"
+        }
+    },
+    resume: {
+        hero: {
+            title: "Resume",
+            description: "Here is my resume. You can also download it as a PDF."
+        }
+    },
+    footer: {
+        title: "© 2024 Ertugrul Sagdic",
+        description: "Created with Next.js, Tailwind CSS, and TypeScript"
+    }
 } as const;

@@ -3,186 +3,275 @@ import { Project } from "@/util/dataTypes/project";
 
 export default {
     navbar: {
-        articles: "Makaleler",
-        projects: "Projeler",
-        tools: "Araçlar",
-        resume: "Özgeçmiş",
-        toggleTheme: "Temayı Değiştir",
-        changeLanguage: "Dili Değiştir",
+        articles: "Articles",
+        projects: "Projects",
+        tools: "Tools",
+        resume: "Resume",
+        toggleTheme: "Toggle Theme",
+        changeLanguage: "Change Language",
     },
     home: {
         hero: {
-            greeting: "Merhaba",
-            title: "Ben Ertuğrul Sağdıç",
-            subtitle: "Yazılım Mühendisi",
-            description: "Her satır kodla anlamlı bir etki yapmak için tutkuyla yazılım geliştiriyorum. Mühendislik yolculuğum, araştırmada, ilerlemede ve sürekli iyileştirmede sınırları zorlamakla tanımlanıyor.",
-            pictureAlt: "Profil Fotoğrafı"
+            greeting: "Hi there",
+            title: "I'm Ertugrul Sagdic",
+            subtitle: "Software Engineer",
+            description: "I build software with a passion to make a meaningful impact with every line of code. My engineering journey is defined by pushing boundaries in research, progress, and continuous improvement.",
+            pictureAlt: "Profile Picture"
         },
         aboutMe: {
-            title: "Hakkımda Daha Fazlası",
-            intro: "İstanbul'un canlı sokaklarından Teksas'taki Lamar Üniversitesi'nin akademik koridorlarına kadar, yazılım mühendisliği yolculuğum, bilgi ve yenilik peşinde amansız bir arayışla işaretlenmiştir. Marmara Üniversitesi'nden Bilgisayar Bilimleri'nde Lisans ve Lamar Üniversitesi'nde Yüksek Lisans derecelerine sahibim ve teknoloji ve yazılım geliştirmede ilerlemeye derinden bağlıyım.",
-            hobbies: "Klavyeden uzakta beni, en son teknoloji trendlerini keşfederken, spor salonunda ağırlık kaldırırken, iyi bir kitapla veya favori TV şovlarımı izlerken bulabilirsiniz. Yaratıcılığı ve yeniliği beslemek için dengeli bir hayat sürdüğüme inanıyorum.",
-            roles: "Kariyerim boyunca her biri gelişimime katkıda bulunan çeşitli rollerde bulundum:",
-            mobileDevelopment: "Mobil Geliştirme: ",
-            mobileDevelopmentDescription: "Kullanıcı deneyimini ve işlevselliğini artıran sezgisel mobil arayüzler geliştirdim.",
-            softwareEngineering: "Yazılım Mühendisliği: ",
-            softwareEngineeringDescriptionStart: "Temel tam yığın mühendisi olarak,",
-            softwareEngineeringDescriptionProject: "Sürekli İyileştirme Yazılımı",
-            softwareEngineeringDescriptionEnd: "projesini Node JS ve React JS kullanarak otomatikleştirdim, öneri, kaizen ve yakın kazaların iş akışlarını yöneterek dört şirkette 1,000'den fazla kullanıcıya hizmet verdim.",
-            machineLearning: "Makine Öğrenmesi Araştırmaları: ",
-            machineLearningDescription: "Cilt lezyonu analizi için yenilikçi bir veri seti üreticisi oluşturdum ve yapay zeka sınırlarını zorlayarak gerçek zamanlı anomali tespit algoritmaları geliştirdim.",
-            rolesEnd: "Her rol, yazılım geliştirmenin teknik yönlerini daha derinlemesine anlamam için bir basamak taşı oldu. Amacım, her satır kodun sadece işlevsel değil, aynı zamanda etkili olmasını sağlamak.",
-            technologies: "Son zamanlarda çalıştığım teknolojiler işte bunlar:"
+            title: "More about me",
+            intro: "From the vibrant streets of Istanbul to the scholarly corridors of Lamar University in Texas, my software engineering journey is marked by a relentless pursuit of knowledge and innovation. Holding a Bachelor’s degree in Computer Science from Marmara University and Master’s at Lamar University, I am deeply committed to advancing in technology and software development.",
+            hobbies: "Away from the keyboard, you might find me delving into the latest tech trends, lifting weights at the gym, enjoying a good book, or unwinding with my favorite TV shows. I believe in maintaining a balanced life to fuel creativity and innovation.",
+            roles: "Throughout my career, I've navigated through diverse roles that have each contributed to my development:",
+            mobileDevelopment: "Mobile Development: ",
+            mobileDevelopmentDescription: "Engineered intuitive mobile interfaces to enhance user experience and functionality.",
+            softwareEngineering: "Software Engineering: ",
+            softwareEngineeringDescriptionStart: "As a key full-stack engineer, I engineered the",
+            softwareEngineeringDescriptionProject: "Continuous Improvement Software",
+            softwareEngineeringDescriptionEnd: "project using Node JS and React JS to automate suggestion, kaizen, and near-miss workflows, serving over 1,000 users across four companies.",
+            machineLearning: "Research in Machine Learning: ",
+            machineLearningDescription: "Created a novel dataset generator for skin lesion analysis and developed real-time anomaly detection algorithms, pushing the boundaries of AI.",
+            rolesEnd: "Each role has been a stepping stone towards a deeper understanding of the technical aspects of software development. My goal is always to build software that every line of code not only functional but also impactful",
+            technologies: "Here are a the technologies I’ve been working with recently:"
         },
         experience: {
-            title: "Profesyonel Deneyimlerim",
+            title: "My Professional experience",
             experiences: [
                 {
-                    company: "Lamar Üniversitesi",
+                    company: "Lamar University",
                     companyLink: "https://www.lamar.edu/arts-sciences/computer-science/index.html",
-                    position: "Araştırma Asistanı",
-                    date: "Ocak 2023 - Şu Anda",
+                    position: "Research Assistant",
+                    date: "January 2023 - Present",
                     bullets: [
                         {
-                            description: "Buckeye Partners Gözetiminde Anomali Tespit Sistemlerinin Geliştirilmesi ve Analizi:",
+                            description: "Development and Analysis of Anomaly Detection Systems for Buckeye Partners Supervised by Dr. Zhang:",
                             subDescriptions: [
-                                "Pompa sensör verilerini analiz etmek için Buckeye ile işbirliği yaptım, kapsamlı bir veri seti elde ettim.",
-                                "Doğrulanmış veri setini kullanarak gerçek zamanlı anomali tespiti için çeşitli makine öğrenimi modellerini geliştirdim ve ince ayar yaptım.",
-                                "Model çıktılarına dayalı tahmini bakım uyarılarını etkinleştiren web tabanlı bir UI ile RESTful API'ler uyguladım.",
+                                "Collaborated with Buckeye to analyze pump sensor data, achieving a comprehensive dataset for anomaly detection.",
+                                "Developed and fine-tuned various machine learning models for real-time anomaly detection, using a verified dataset.",
+                                "Implemented a web-based UI with RESTful APIs, enabling predictive maintenance alerts based on model outputs.",
                             ],
                         },
                         {
-                            description: "Dr. Kockara Gözetiminde Veri Seti Üreticisinin Geliştirilmesi ve Derin Öğrenme Modellerinin Değerlendirilmesi:",
+                            description: "Development of Dataset Generator and Evaluation of Deep Learning Models Supervised by Dr. Kockara",
                             subDescriptions: [
-                                "C# ve Unity Engine kullanarak 1,398 çeşitli total vücut fotoğrafçılığı görüntüsü üreten TBPGen'i geliştirdim.",
-                                "13 derin öğrenme modeli arasında Python/Pytorch kullanarak cilt lezyonu tespiti ve segmentasyonunu değerlendirdim.",
-                                "TBPGen veri setinin tespit ve segmentasyon doğruluğunu artırdığını gösteren %90 IoU ve F1 skorları elde ettim.",
+                                "Engineered TBPGen with C# and Unity Engine, generating 1,398 diverse total body photography images.",
+                                "Evaluated skin lesion detection and segmentation using Python/Pytorch across 13 deep learning models.",
+                                "Achieved 90% of IoU and F1 scores, demonstrating the TBPGen dataset’s enhancement in detection and segmentation accuracy.",
                             ]
                         }
                     ]
                 },
                 {
-                    company: "MDP Grubu",
+                    company: "MDP Group",
                     companyLink: "https://www.mdpgroup.com/",
-                    position: "Tam Yığın Yazılım Mühendisi",
-                    date: "Temmuz 2021 - Ocak 2023",
+                    position: "Full Stack Software Engineer",
+                    date: "July 2021 - January 2023",
                     bullets: [
                         {
-                            description: "Tam yığın mühendisi olarak Sürekli İyileştirme Yazılımını geliştirdim, dört şirkette 1,000'den fazla kullanıcıya hizmet verdim.",
+                            description: "Engineered the Continuous Improvement Software as a full-stack engineer using Node JS and React JS, serving over 1,000 users across four companies.",
                         },
                         {
-                            description: "Süreçleri kağıtsız hale getiren ve süreç süresini %60 azaltan Öneri, Kaizen ve Yakın Kazalar iş akışlarını uyguladım.",
+                            description: "Implemented Suggestion, Kaizen, and Near Miss workflows that transitioned processes to paperless and reducing process time by 60%.",
                         },
                         {
-                            description: "Sistem etkileşimini ve kullanıcı deneyimini artıran 200'den fazla JSON API tasarladım ve sürdürdüm.",
+                            description: "Designed and maintained over 200 JSON APIs and 25+ user interfaces, enhancing system interactivity and user experience.",
                         },
                         {
-                            description: "Agil metodolojileri kullanarak Jira ile projeyi yönettim, ekibin %100 zamanında görev teslimatını ve %25 üretkenlik artışını sağladım.",
+                            description: "Managed the project with Jira using agile methodologies, leading the team to achieve 100% on-time task delivery and a 25% increase in productivity.",
                         }
                     ]
                 },
                 {
                     company: "Crenno",
-                    position: "Mobil Yazılım Mühendisi",
-                    date: "Kasım 2020 - Nisan 2021",
+                    position: "Mobile Software Engineer",
+                    date: "November 2020 - April 2021",
                     bullets: [
                         {
-                            description: "Dart/Flutter kullanarak mobil uygulamalar için 15+ kullanıcı arayüzü tasarladım ve uyguladım, kullanıcı etkileşimini ve katılımını artırdım.",
+                            description: "Designed and implemented 15+ user interfaces for mobile applications using Dart/Flutter, enhancing user interaction and engagement.",
                         },
                         {
-                            description: "Sürüm kontrolü için derinlemesine bilgi ve pratik uzmanlık kazandım, takım iş akışını önemli ölçüde artırarak birleştirme çatışmalarını %60 azalttım.",
+                            description: "Acquired in-depth knowledge and practical expertise in Git for version control, significantly enhancing team workflow and reducing merge conflicts by 60%.",
                         }
                     ]
                 },
             ] as Experience[],
         },
         projects: {
-            title: "Üzerinde Çalıştığım Bazı Projeler",
-            projects: [
-                {
-                    title: "Portfolio Website",
-                    description: "Kişisel portfolio web sitesini Next.js ve Tailwind CSS kullanarak tasarladım ve geliştirdim.",
-                    link: {
-                        title: "esagdic.com",
-                        url: "",
-                        isIntenal: true,
-                    },
-                    techStack: ["Next.js", "Tailwind CSS", "Typescript"],
-                    logo: "logo-dark.png",
-                },
-                {
-                    title: "DevGPT Madencilik Challenge",
-                    description: "ChatGPT ile geliştirici etkileşimlerindeki ortak tartışma temalarını belirlemek için konu modellemesi gerçekleştirdim.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/mining-challange"
-                    },
-                    techStack: ["Python", "Veri Analizi", "NLP"],
-                },
-                {
-                    title: "Cat Facts WebApp",
-                    description: "Cat Facts API kullanarak rastgele kedi bilgileri gösteren bir web sitesi.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/cat-facts-app",
-                    },
-                    techStack: ["Python", "Flask", "HTMX"],
-                },
-                {
-                    title: "WaSeat Transport App",
-                    description: "Taşıma güzergahlarını ve karbon ayak izini takip eden mobil uygulama. Flutter hackathonunda 2. oldu.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/waseat",
-                    },
-                    techStack: ["Flutter", "Dart", "Firebase"],
-                    logo: "waseat-logo.png",
-                },
-                {
-                    title: "Flutter Code Generator",
-                    description: "Flutter uygulamaları için Flutter mimarisi dosya üretimini otomatikleştiren bir VS Code uzantısı.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/flutter_code_generator",
-                    },
-                    techStack: ["Javascript", "VS Code Uzantısı"],
-                },
-                {
-                    title: "Ahtapot Marin Web Sitesi",
-                    description: "Ürün listelemeleri ve iletişim bilgileri içeren, React ile yapılmış duyarlı bir web sitesi.",
-                    link: {
-                        title: "ahtopotmarin.com",
-                        url: "https://www.ahtopotmarin.com/",
-                    },
-                    techStack: ["React", "CSS", "Firebase"],
-                    logo: "ahtapotmarin-logo.png",
-                },
-                {
-                    title: "Kanser Tespiti Gen İfadeleri Kullanılarak",
-                    description: "Tiroid kanserinde gen ifade değişikliklerini veri bilimi teknikleri kullanarak analiz ettim.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/cancer-detection",
-                    },
-                    techStack: ["Python", "Veri Analizi", "Makine Öğrenimi"],
-                },
-                {
-                    title: "CPU Dijital Mantık Tasarımı",
-                    description: "Verilog ve Logism kullanarak, komut setlerini yürütebilen 18-bit veri boyutlu ve 16 kaydedicili basit bir CPU.",
-                    link: {
-                        title: "github.com",
-                        url: "https://github.com/ertugrulsagdic/DigitalDesignProject",
-                    },
-                    techStack: ["Verilog", "Logism", "Dijital Mantık"],
-                }
-
-            ] as Project[],
+            title: "Some Projects I've worked on",
         }
+    },
+    allProjects: {
+        projects: [
+            {
+                title: "Portfolio Website",
+                description: "Designed and developed a personal portfolio website using Next.js and Tailwind CSS.",
+                link: {
+                    title: "esagdic.com",
+                    url: "",
+                    isIntenal: true,
+                },
+                techStack: ["Next.js", "Tailwind CSS", "Typescript"],
+                logo: "logo-dark.png",
+            },
+            {
+                title: "DevGPT Mining Challenge",
+                description: "Performed topic modeling on developer interactions with ChatGPT to identify common discussion themes.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/mining-challange"
+                },
+                techStack: ["Python", "Data Analysis", "NLP"],
+            },
+            {
+                title: "Cat Facts WebApp",
+                description: "A website that displays random cat facts using HTMX and Flask by using the Cat Facts API.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/cat-facts-app",
+                },
+                techStack: ["Python", "Flask", "HTMX"],
+            },
+            {
+                title: "WaSeat Transport App",
+                description: "Mobile app for tracking transportation routes and carbon footprint. Achieved 2nd place in the Flutter hackathon.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/waseat",
+                },
+                techStack: ["Flutter", "Dart", "Firebase"],
+                logo: "waseat-logo.png",
+            },
+            {
+                title: "Flutter Code Generator",
+                description: "A VS Code extension to automate Flutter architecture file generation for Flutter applications.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/flutter_code_generator",
+                },
+                techStack: ["Javascript", "VS Code Extension"],
+            },
+            {
+                title: "Ahtapot Marin Website",
+                description: "A responsive website with React, featuring product listings, and contact information.",
+                link: {
+                    title: "ahtopotmarin.com",
+                    url: "https://www.ahtopotmarin.com/",
+                },
+                techStack: ["React", "CSS", "Firebase"],
+                logo: "ahtapotmarin-logo.png",
+            },
+
+        ] as Project[],
+        undergradProjects: [
+            {
+                title: "Cancer Detection using Gene Expressions",
+                description: "Implemented cancer classification models using K-NN and Neural Network algorithms, and explored differentially expressed genes using the Rain Forest Algorithm.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/cancer-detection"
+                },
+                techStack: ["Python", "Machine Learning", "Data Analysis"],
+            },
+            {
+                title: "Multithreaded Web Server",
+                description: "An HTTP multithreaded web server that dynamically creates HTML objects based on client requests, including a proxy server for caching.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/Multithreaded-Web-Server"
+                },
+                techStack: ["Python", "Networking"],
+            },
+            {
+                title: "CPU Digital Logic Design",
+                description: "Basic CPU with 18-bit data size and 16 registers, capable of executing instruction sets using Verilog and Logism.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/DigitalDesignProject",
+                },
+                techStack: ["Verilog", "Logism", "Digital Logic"],
+            },
+            {
+                title: "Park It Analysis and Design",
+                description: "Designed the roadmap for 'Park It' app using the waterfall methodology, covering planning, analysis, design, and implementation stages.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/park-it-analysis-and-design"
+                },
+                techStack: ["Flutter", "Project Management"],
+            },
+            {
+                title: "Reinforcement Learning Prioritized Sweeping",
+                description: "Developed a reinforcement learning agent using the Prioritized Sweeping algorithm for navigating a grid world map.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/Cliff-Walking-Prioritized-Sweeping"
+                },
+                techStack: ["Python", "Reinforcement Learning"],
+            },
+            {
+                title: "Online Attendance System",
+                description: "An attendance management app for schools, using QR code scanning for attendance, with features for announcements and document uploads.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/OASYS"
+                },
+                techStack: ["React Native", "Firebase"],
+            },
+            {
+                title: "Database and Web Application of an Airport",
+                description: "Developed a database and web application for managing airport data, using MSSQL, HTML, CSS, and JavaScript with an MVC pattern.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/AirportDatabase"
+                },
+                techStack: ["SQL", "HTML", "CSS", "JavaScript"],
+            },
+            {
+                title: "Monopoly Game",
+                description: "Developed a simulation of the Monopoly game in Java using object-oriented principles, with iterative and evolutionary development.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/MonopolyGame"
+                },
+                techStack: ["Java", "Software Development"],
+            },
+            {
+                title: "Thread Synchronization and My Own Shell",
+                description: "Implemented thread synchronization and developed a custom shell in C on Linux, featuring several bespoke commands and functionalities.",
+                link: {
+                    title: "github.com",
+                    url: "https://github.com/ertugrulsagdic/OperatingSystemsProjects"
+                },
+                techStack: ["C", "Systems Programming"],
+            }
+        ] as Project[],
     },
     articles: {
         hero: {
-            title: "Makaleler",
-            description: "Yazılım mühendisliği, makine öğrenimi ve kişisel gelişim hakkında yazıyorum. İşte en son makalelerimden bazıları:"
+            title: "Articles",
+            description: "I write about software engineering, machine learning, and personal development. Here are some of my latest articles:"
         }
     },
+    projects: {
+        hero: {
+            title: "Projects",
+            description: "Here are some of the projects I've worked on. Click on the cards to learn more about each project."
+        },
+    },
+    tools: {
+        hero: {
+            title: "Tools",
+            description: "Here are some of the tools I use in my daily workflow:"
+        }
+    },
+    resume: {
+        hero: {
+            title: "Resume",
+            description: "Here is my resume. You can also download it as a PDF."
+        }
+    },
+    footer: {
+        title: "© 2024 Ertugrul Sagdic",
+        description: "Created with Next.js, Tailwind CSS, and TypeScript"
+    }
 } as const;
