@@ -2,7 +2,8 @@
 
 import Container from "@/components/Container"
 import { useState } from 'react';
-import { Experience } from "@/util/dataTypes/experiences";
+import { Experience } from "@/dataTypes/experiences";
+import Link from "next/link";
 
 
 export default function ExperienceSection({translations} : {
@@ -43,12 +44,12 @@ export default function ExperienceSection({translations} : {
                                     <h4 className="dark:text-zinc-400 text-zinc-600">{experience.position}</h4>
                                     <h4>
                                         @
-                                        <a
-                                            href={experience.companyLink}
-                                            target="_blank"
+                                        <Link
+                                            href={experience.companyLink ? experience.companyLink : ''}
+                                            target={experience.companyLink ? "_blank" : "_self"}
                                         >
                                             {experience.company}
-                                        </a>
+                                        </Link>
                                     </h4>
                                 </div>
                                 <p>{experience.date}</p>

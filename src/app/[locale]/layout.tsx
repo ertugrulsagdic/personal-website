@@ -4,7 +4,7 @@ import "../globals.css";
 import { Providers } from "../providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import getLocale from "@/util/locales";
+import getLocale from "@/locales";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 

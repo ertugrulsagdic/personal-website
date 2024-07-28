@@ -1,5 +1,6 @@
 import Container from "@/components/Container"
 import { NewTabIcon } from "../icons/NewTabIcon";
+import Link from "next/link";
 
 const Skills: string[] = [
     'Python',
@@ -56,9 +57,9 @@ export default function AboutMeSection({translations}: {
                             <p>
                                 <strong>{translations.softwareEngineering}</strong> 
                                 {translations.softwareEngineeringDescriptionStart}
-                                <a href="https://oneri.io" target="_blank" className="mx-1">
+                                <Link href="https://oneri.io" target="_blank" className="mx-1">
                                     <strong>{translations.softwareEngineeringDescriptionProject}</strong>
-                                </a>
+                                </Link>
                                 {translations.softwareEngineeringDescriptionEnd}
                             </p>
                         </li>

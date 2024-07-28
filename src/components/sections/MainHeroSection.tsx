@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Container from "@/components/Container";
-import Hi from '@/images/Hi.gif'
 import { GitHubIcon } from '@/components/icons/GitHubIcon';
 import { InstagramIcon } from '@/components/icons/InstagramIcon';
 import { XIcon } from '@/components/icons/XIcon';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
-// import Image from 'next/image'
 import ProfilePicture from '@/images/ertugrul.jpeg'
-import { SocialProfile } from "@/util/dataTypes/socialProfile";
+import { SocialProfile } from "@/dataTypes/socialProfile";
+import Link from "next/link";
 
 
 const SocialMedia: SocialProfile[] = [
@@ -34,7 +33,7 @@ export default function MainHeroSection({ translations }: {
                         <p>{translations.greeting}</p>
                         <Image
                             alt='Hi!'
-                            src={Hi}
+                            src='https://raw.githubusercontent.co/ertugrulsagdic/ertugrulsagdic/main/Hi.gif'
                             width={25} height={25}
                             loading="lazy"
                             unoptimized
@@ -51,13 +50,13 @@ export default function MainHeroSection({ translations }: {
                                 key={socialProfile.name}
                                 aria-label={`Follow on ${socialProfile.name}`}
                             >
-                                <a
+                                <Link
                                     href={socialProfile.link}
                                     target="_blank"
                                     className="group flex text-sm font-medium text-zinc-800 transition hover:text-primary dark:text-zinc-200"
                                 >
                                     <socialProfile.icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-primary" />
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>

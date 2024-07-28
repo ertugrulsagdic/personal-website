@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import LogoLight from '../images/logos/logo-light.png';
 import LogoDark from '../images/logos/logo-dark.png';
-import { NavbarLink } from '@/util/dataTypes/navbarLinks';
+import { NavbarLink } from '@/dataTypes/navbarLinks';
 import { LanguageIcon } from './icons/LanguageIcon';
 
 export default function Navbar({ locale, translations }: {

@@ -1,18 +1,22 @@
 import Container from "@/components/Container"
 import { NewTabIcon } from "../icons/NewTabIcon";
 import Image from 'next/image';
-import { Project } from "@/util/dataTypes/project";
+import { Project } from "@/dataTypes/project";
+import Link from "next/link";
 
-export default function WorkSection({ title, subtitle, projects }: {
+export default function WorkSection({ title, description, projects }: {
     title?: string,
-    subtitle?: string,
+    description?: string,
     projects: Project[]
 }) {
     const imageContext = (require as any).context('@/images/logos', true);
     return (
         <Container className="mt-16 sm:mt-32">
             <div className="space-y-12">
-                <h1>{title}</h1>
+                <div className="space-y-4">
+                    {title && <h1>{title}</h1>}
+                    {description && <p>{description}</p>}
+                </div>
                 <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-y-12 gap-x-12 ">
                     {projects.map(async (project) => {
                         const logo = project.logo ? imageContext(`./${project.logo}`).default : imageContext('./github.png').default;
@@ -44,7 +48,7 @@ export default function WorkSection({ title, subtitle, projects }: {
                                 </ul>
                                 <div>
                                     <span className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
-                                    <a
+                                    <Link
                                         href={project.link.url}
                                         target={project.link.isIntenal ? '_self' : '_blank'}
                                     >
@@ -55,7 +59,7 @@ export default function WorkSection({ title, subtitle, projects }: {
                                                 <NewTabIcon className="h-4 w-4" />
                                             </div>
                                         </span>
-                                    </a>
+                                    </Link>
                                 </div>
 
                             </div>

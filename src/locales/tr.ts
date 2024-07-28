@@ -1,5 +1,5 @@
-import { Experience } from "@/util/dataTypes/experiences";
-import { Project } from "@/util/dataTypes/project";
+import { Experience } from "@/dataTypes/experiences";
+import { Project } from "@/dataTypes/project";
 
 export default {
     navbar: {
@@ -101,7 +101,7 @@ export default {
         }
     },
     allProjects: {
-        projects: [
+        mostRecentProjects: [
             {
                 title: "Portfolio Website",
                 description: "Designed and developed a personal portfolio website using Next.js and Tailwind CSS.",
@@ -254,9 +254,17 @@ export default {
     },
     projects: {
         hero: {
-            title: "Projects",
-            description: "Here are some of the projects I've worked on. Click on the cards to learn more about each project."
+            title: "My Small Steps Towards Big Change",
+            description: "Here's a showcase of the projects that have defined my journey so far. From mobile development to machine learning, each project represents a chapter of my ongoing adventure in tech. Many of these initiatives are open to collaboration—so if something sparks your interest, feel free to dive into the details and join me!"
         },
+        mostRecentProjects: {
+            title: "Most Recent Projects",
+            description: "Here are some of the projects I've been working on recently"
+        },
+        undergradProjects: {
+            title: "Undergraduate Projects",
+            description: "Here are some of the projects I've worked on during my undergraduate studies"
+        }
     },
     tools: {
         hero: {
