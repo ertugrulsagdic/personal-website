@@ -3,8 +3,8 @@ import Container from "@/components/Container";
 
 export default function HeroSection({ translations }: {
     translations: {
-        title: string;
-        subtitle: string;
+        title?: string;
+        subtitle?: string;
         description: string;
     }
 }) {
@@ -12,8 +12,8 @@ export default function HeroSection({ translations }: {
         <Container className="mt-16 sm:mt-32">
             <div className="max-w-3xl space-y-6">
                 <div>
-                    <h1>{translations.title}</h1>
-                    <h2 className="text-zinc-600 dark:text-zinc-400">{translations.subtitle}</h2>
+                    {translations.title && <h1>{translations.title}</h1>}
+                    {translations.subtitle && <h2 className="text-zinc-600 dark:text-zinc-400">{translations.subtitle}</h2>}
                 </div>
                 <p>{translations.description}</p>
             </div>

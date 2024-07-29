@@ -6,8 +6,13 @@ const locales: { [key: string]: () => Promise<any> } = {
     tr: () => import('./tr').then((mod) => mod.default)
 }
 
-export const getLocale = async (locale: string) => {
-    return locales[locale]();
+export const getLocale = async (locale: string, keys?: string) => {
+    if (!keys) {
+        return await locales[locale]();
+    }
+
+    const translations = await locales[locale]();
+    return keys.split('.').reduce((acc, key) => acc[key], translations);
 }
 
 export default getLocale;

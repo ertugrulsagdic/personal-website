@@ -7,6 +7,7 @@ import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import ProfilePicture from '@/images/ertugrul.jpeg'
 import { SocialProfile } from "@/dataTypes/socialProfile";
 import Link from "next/link";
+import {ImageWithFallback} from "@/components/ImageWithFallback";
 
 
 const SocialMedia: SocialProfile[] = [
@@ -31,9 +32,9 @@ export default function MainHeroSection({ translations }: {
                 <div className="max-w-3xl space-y-6">
                     <div className="flex items-center space-x-2">
                         <p>{translations.greeting}</p>
-                        <Image
+                        <ImageWithFallback
                             alt='Hi!'
-                            src='https://raw.githubusercontent.co/ertugrulsagdic/ertugrulsagdic/main/Hi.gif'
+                            src='https://raw.githubusercontent.com/ertugrulsagdic/ertugrulsagdic/main/Hi.gif'
                             width={25} height={25}
                             loading="lazy"
                             unoptimized

@@ -1,9 +1,16 @@
-import Container from "@/components/Container"
+import HeroSection from "@/components/sections/HeroSection";
+import ToolsSection from "@/components/sections/ToolsSection";
+import getLocale from "@/locales";
 
-export default function Page() {
+export default async function Page({ params: { locale } }: { params: { locale: string } }) {
+    const translations = await getLocale(locale, 'tools');
+
     return (
-        <Container>
-            <h1>This is tools page</h1>
-        </Container>
-    )
+        <div >
+            <HeroSection 
+                translations={translations.hero}
+            />
+            <ToolsSection tools={translations.toolsList} />
+        </div>
+    );
 }

@@ -1,33 +1,20 @@
 import Container from "@/components/Container"
+import HeroSection from "@/components/sections/HeroSection";
+import getLocale from "@/locales";
 
-export default function Page() {
+export default async function Page({ params: { locale } }: { params: { locale: string } }) {
+    const translations = await getLocale(locale, 'articles');
+
+    const articles = [];
+
     return (
-        <main >
-
-            <Container>
-                <div className="mt-16 sm:mt-32 h-96">
-                    <h1>Blog</h1>
-                </div>
-
-                <div className="mt-16 sm:mt-32 h-96">
-                    <h1>Title</h1>
-                </div>
-                <div className="mt-16 sm:mt-32 h-96">
-                    <h1>Title</h1>
-                </div>
-                <div className="mt-16 sm:mt-32 h-96">
-                    <h1>Title</h1>
-                </div>
-                <div className="mt-16 sm:mt-32 h-96">
-                    <h1>Title</h1>
-                </div>
-                <div className="mt-16 sm:mt-32 h-96">
-                    <h1>Title</h1>
-                </div>
-                <div className="mt-16 sm:mt-32 h-96">
-                    <h1>Title</h1>
-                </div>
-            </Container>
-        </main>
+        <div >
+            <HeroSection 
+                translations={{
+                    title: translations.hero.title,
+                    description: articles.length !== 0 ? translations.hero.description : translations.hero.emptyDescription
+                }}
+            />
+        </div>
     );
 }

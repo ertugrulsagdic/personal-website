@@ -1,5 +1,6 @@
 import { Experience } from "@/dataTypes/experiences";
 import { Project } from "@/dataTypes/project";
+import { ToolCategory } from "@/dataTypes/ToolCategory";
 
 export default {
     navbar: {
@@ -248,8 +249,9 @@ export default {
     },
     articles: {
         hero: {
-            title: "Articles",
-            description: "I write about software engineering, machine learning, and personal development. Here are some of my latest articles:"
+            title: "Exploring Ideas: Insights on Software, AI, and Personal Growth",
+            description: "Dive into my collection of articles where I share thoughts and experiences on software engineering, machine learning, and the journey of personal development. Each piece aims to provide clarity, inspiration, and practical knowledge to help you on your tech adventure.",
+            emptyDescription: "I'm currently in the process of crafting articles that delve into software engineering, machine learning, and personal development. Check back soon to explore insights and stories designed to inspire and educate. I'm excited to share them with you!"
         }
     },
     projects: {
@@ -268,9 +270,191 @@ export default {
     },
     tools: {
         hero: {
-            title: "Tools",
-            description: "Here are some of the tools I use in my daily workflow:"
-        }
+            title: "My Toolkit: From Code to Creativity",
+            description: "Browse through the tools that are integral to my daily workflow. From development frameworks and programming languages to project management applications, each tool is a key player in my pursuit of efficient and innovative software solutions."
+        },
+        toolsList: [
+            {
+              title: "Development Environments and Editors",
+              tools: [
+                {
+                  title: "Visual Studio Code",
+                  description: "I still miss WebStorm but at least VS Code does not consume 1000% CPU when I open it. And to be fair, it's a great editor.",
+                  href: "https://code.visualstudio.com/"
+                },
+                {
+                  title: "Jupyter Notebook",
+                  description: "A must-have for data scientists, offering a mix of code, text, and visuals — perfect for sharing how-to's and research.",
+                  href: "https://jupyter.org/"
+                }
+              ]
+            },
+            {
+              title: "Programming Languages",
+              tools: [
+                {
+                  title: "Python",
+                  description: "Versatile and powerful, it's my go-to for quick scripts, data analysis, and machine learning.",
+                  href: "https://www.python.org/"
+                },
+                {
+                  title: "JavaScript",
+                  description: "The backbone of the web, perfect for both front-end interactivity and back-end services.",
+                  href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                },
+                {
+                  title: "TypeScript",
+                  description: "JavaScript with syntax for types, it brings static type checking to web development, making the code less prone to runtime errors.",
+                  href: "https://www.typescriptlang.org/"
+                }
+              ]
+            },
+            {
+              title: "Web Development",
+              tools: [
+                {
+                  title: "React",
+                  description: "My framework of choice for building user interfaces, especially SPA that need rich interaction.",
+                  href: "https://reactjs.org/"
+                },
+                {
+                  title: "Node.js",
+                  description: "Enables me to use JavaScript on the server-side; great for building scalable network applications.",
+                  href: "https://nodejs.org/"
+                },
+                {
+                  title: "Next.js",
+                  description: "A React framework that supports server-side rendering and static site generation, ideal for building performant web applications.",
+                  href: "https://nextjs.org/"
+                },
+                {
+                  title: "Tailwind CSS",
+                  description: "A utility-first CSS framework that allows for rapid styling of applications without leaving your HTML.",
+                  href: "https://tailwindcss.com/"
+                }
+              ]
+            },
+            {
+              title: "Frameworks and Libraries for Machine Learning",
+              tools: [
+                {
+                  title: "TensorFlow",
+                  description: "A comprehensive platform that lets me build and train machine learning models at scale.",
+                  href: "https://www.tensorflow.org/"
+                },
+                {
+                  title: "PyTorch",
+                  description: "Known for its flexibility and ease of use, it's my preferred tool for building deep learning projects.",
+                  href: "https://pytorch.org/"
+                },
+                {
+                  title: "Keras",
+                  description: "Runs atop TensorFlow and simplifies many machine learning workflows with its high-level APIs.",
+                  href: "https://keras.io/"
+                }
+              ]
+            },
+            {
+              title: "Data Manipulation and Analysis",
+              tools: [
+                {
+                  title: "Pandas",
+                  description: "Ideal for structured data operations and manipulations, it's indispensable for any data-driven task.",
+                  href: "https://pandas.pydata.org/"
+                },
+                {
+                  title: "NumPy",
+                  description: "Provides support for large, multi-dimensional arrays and matrices, along with a collection of high-level mathematical functions.",
+                  href: "https://numpy.org/"
+                }
+              ]
+            },
+            {
+              title: "Version Control and Project Management",
+              tools: [
+                {
+                  title: "Git",
+                  description: "Essential for any coding project, allowing for effective version control and collaboration.",
+                  href: "https://git-scm.com/"
+                },
+                {
+                  title: "Docker",
+                  description: "Helps me encapsulate my environment and share it with my team, ensuring everyone is on the same page.",
+                  href: "https://www.docker.com/"
+                },
+                {
+                  title: "Kubernetes",
+                  description: "Manages my containers at scale, handling hundreds of machines along with their software.",
+                  href: "https://kubernetes.io/"
+                },
+                {
+                  title: "Jira",
+                  description: "For agile project management, Jira is the tool that keeps my projects on track and well-documented.",
+                  href: "https://www.atlassian.com/software/jira"
+                },
+                {
+                  title: "Trello",
+                  description: "Perfect for organizing tasks and small projects, it's like a digital bulletin board for all my ideas and activities.",
+                  href: "https://trello.com/"
+                }
+              ]
+            },
+            {
+              title: "Productivity and Utility Tools",
+              tools: [
+                {
+                  title: "Notion",
+                  description: "A powerful organizing tool, Notion helps me keep my life and projects streamlined and well-documented.",
+                  href: "https://www.notion.so/"
+                },
+                {
+                  title: "Alfred",
+                  description: "Boosts my productivity with its powerful tools for macOS, including hotkeys, keywords, and text expansion.",
+                  href: "https://www.alfredapp.com/"
+                },
+                {
+                  title: "Zoom",
+                  description: "The go-to platform for virtual meetings, it's indispensable in today's remote work environment.",
+                  href: "https://zoom.us/"
+                }
+              ]
+            },
+            {
+              title: "Creative and Design Tools",
+              tools: [
+                {
+                  title: "Adobe Photoshop",
+                  description: "Whether I'm crafting marketing materials or tweaking web graphics, Photoshop offers the tools I need.",
+                  href: "https://www.adobe.com/products/photoshop.html"
+                },
+                {
+                  title: "Figma",
+                  description: "Collaborative, powerful, and intuitive, Figma helps me design and prototype quickly and efficiently.",
+                  href: "https://www.figma.com/"
+                },
+                {
+                  title: "Canva",
+                  description: "Great for quickly creating aesthetic designs for web and print, Canva is a tool I often turn to for rapid visual creation.",
+                  href: "https://www.canva.com/"
+                }
+              ]
+            },
+            {
+              title: "Monitoring and Analysis Tools",
+              tools: [
+                {
+                  title: "Postman",
+                  description: "Simplifies API development by allowing me to create, test, and modify APIs easily.",
+                  href: "https://www.postman.com/"
+                },
+                {
+                  title: "Chrome Developer Tools",
+                  description: "A vital set of utilities for debugging, modifying, and optimizing my web applications.",
+                  href: "https://developer.chrome.com/docs/devtools/"
+                }
+              ]
+            }
+          ] as ToolCategory[],          
     },
     resume: {
         hero: {
