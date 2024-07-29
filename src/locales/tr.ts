@@ -1,6 +1,6 @@
-import { Experience } from "@/dataTypes/experiences";
-import { Project } from "@/dataTypes/project";
-import { ToolCategory } from "@/dataTypes/ToolCategory";
+import { Experience } from "@/data/dataTypes/experiences";
+import { Project } from "@/data/dataTypes/project";
+import { ToolCategory } from "@/data/dataTypes/ToolCategory";
 
 export default {
     navbar: {

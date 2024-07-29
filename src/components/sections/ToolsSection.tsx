@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import { ToolCategory } from "@/dataTypes/ToolCategory";
+import { ToolCategory } from "@/data/dataTypes/ToolCategory";
 import { ImageWithFallback } from "../ImageWithFallback";
 import Link from "next/link";
 

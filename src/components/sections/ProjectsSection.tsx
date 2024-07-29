@@ -1,7 +1,7 @@
 import Container from "@/components/Container"
 import { NewTabIcon } from "../icons/NewTabIcon";
 import Image from 'next/image';
-import { Project } from "@/dataTypes/project";
+import { Project } from "@/data/dataTypes/project";
 import Link from "next/link";
 
 export default function WorkSection({ title, description, projects }: {

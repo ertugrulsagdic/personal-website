@@ -2,7 +2,7 @@
 
 import Container from "@/components/Container"
 import { useState } from 'react';
-import { Experience } from "@/dataTypes/experiences";
+import { Experience } from "@/data/dataTypes/experiences";
 import Link from "next/link";
 
 

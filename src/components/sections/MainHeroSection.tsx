@@ -1,21 +1,10 @@
 import Image from "next/image";
 import Container from "@/components/Container";
-import { GitHubIcon } from '@/components/icons/GitHubIcon';
-import { InstagramIcon } from '@/components/icons/InstagramIcon';
-import { XIcon } from '@/components/icons/XIcon';
-import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import ProfilePicture from '@/images/ertugrul.jpeg'
-import { SocialProfile } from "@/dataTypes/socialProfile";
 import Link from "next/link";
 import {ImageWithFallback} from "@/components/ImageWithFallback";
+import { socialLinks } from "@/data";
 
-
-const SocialMedia: SocialProfile[] = [
-    { name: 'Twitter', link: 'https://twitter.com/ertugrulsagdic', icon: XIcon },
-    { name: 'Instagram', link: 'https://www.instagram.com/ertugrulsagdic/', icon: InstagramIcon },
-    { name: 'Github', link: 'https://github.com/ertugrulsagdic', icon: GitHubIcon },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/ertugrulsagdic', icon: LinkedInIcon },
-];
 
 export default function MainHeroSection({ translations }: {
     translations: {
@@ -46,7 +35,7 @@ export default function MainHeroSection({ translations }: {
                     </div>
                     <p>{translations.description}</p>
                     <ul className='mt-6 flex gap-4 flow-row'>
-                        {SocialMedia.map((socialProfile) => (
+                        {socialLinks.map((socialProfile) => (
                             <li
                                 key={socialProfile.name}
                                 aria-label={`Follow on ${socialProfile.name}`}

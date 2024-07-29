@@ -1,23 +1,6 @@
 import Container from "@/components/Container"
-import { NewTabIcon } from "../icons/NewTabIcon";
+import { skills } from "@/data";
 import Link from "next/link";
-
-const Skills: string[] = [
-    'Python',
-    'TensorFlow',
-    'PyTorch',
-    'TypeScript',
-    'Next.js',
-    'Tailwind CSS',
-    'JavaScript (ES6+)',
-    'React',
-    'Node.js',
-    'SQL (PostgreSQL)',
-    'NoSQL (MongoDB)',
-    'Docker',
-    'Git',
-    'Agile',
-];
 
 export default function AboutMeSection({translations}: {
     translations: {
@@ -78,7 +61,7 @@ export default function AboutMeSection({translations}: {
                         {translations.technologies}
                     </p>
                     <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                        {Skills.map((skill) => (
+                        {skills.map((skill) => (
                             <li className="before:content-['▹']" key={skill}>{skill}</li>
                         ))}
                     </ul>
