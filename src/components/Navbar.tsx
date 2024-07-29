@@ -67,7 +67,7 @@ export default function Navbar({ locale, translations }: {
 
     return (
 
-        <header className={`sticky w-full ${isVisible ? 'top-0' : ''} z-50 flex justify-center`}>
+        <header className={`sticky w-full ${isVisible ? 'top-0' : ''} z-50 flex justify-center print:hidden`}>
             <div className='flex-1 max-w-7xl lg:px-8'>
                 <div className="px-4 sm:px-8 lg:px-24">
                     <div className='flex flex-row my-4'>

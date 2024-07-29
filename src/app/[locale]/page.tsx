@@ -12,7 +12,10 @@ export default async function Home({ params: { locale } }: { params: { locale: s
     <div>
       <MainHeroSection translations={translations.home.hero} />
       <AboutMeSection translations={translations.home.aboutMe} />
-      <ExperienceSection translations={translations.home.experience} />
+      <ExperienceSection translations={{
+        title: translations.home.experience.title,
+        experiences: translations.experiences
+      }} />
       <ProjectsSection
         title={translations.home.projects.title}
         projects={translations.allProjects.mostRecentProjects}

@@ -3,6 +3,7 @@ export type Experience = {
     companyLink?: string;
     position: string;
     date: string;
+    location: string;
     bullets: Bullet[];
 }
 

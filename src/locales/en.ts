@@ -1,3 +1,4 @@
+import { Education } from "@/data/dataTypes/education";
 import { Experience } from "@/data/dataTypes/experiences";
 import { Project } from "@/data/dataTypes/project";
 import { ToolCategory } from "@/data/dataTypes/ToolCategory";
@@ -5,7 +6,7 @@ import { ToolCategory } from "@/data/dataTypes/ToolCategory";
 export default {
   info: {
     name: "Ertugrul Sagdic",
-    location: "Houston, TX",
+    location: "Houston, TX, USA",
     locationLink: "https://www.google.com/maps/place/Houston,+TX",
     email: "ertugrulsagdic98@gmail.com",
     mobile: "+1 (409) 867 4970",
@@ -56,6 +57,7 @@ export default {
       companyLink: "https://www.lamar.edu/arts-sciences/computer-science/index.html",
       position: "Research Assistant",
       date: "January 2023 - Present",
+      location: "Beaumont, TX, USA",
       bullets: [
         {
           description: "Development and Analysis of Anomaly Detection Systems for Buckeye Partners Supervised by Dr. Zhang:",
@@ -80,6 +82,7 @@ export default {
       companyLink: "https://www.mdpgroup.com/",
       position: "Full Stack Software Engineer",
       date: "July 2021 - January 2023",
+      location: "Istanbul, Turkey",
       bullets: [
         {
           description: "Engineered the Continuous Improvement Software as a full-stack engineer using Node JS and React JS, serving over 1,000 users across four companies.",
@@ -99,6 +102,7 @@ export default {
       company: "Crenno",
       position: "Mobile Software Engineer",
       date: "November 2020 - April 2021",
+      location: "Istanbul, Turkey",
       bullets: [
         {
           description: "Designed and implemented 15+ user interfaces for mobile applications using Dart/Flutter, enhancing user interaction and engagement.",
@@ -255,20 +259,22 @@ export default {
       }
     ] as Project[],
   },
-  education: [
+  educations: [
     {
       institution: "Lamar University",
+      location: "Beaumont, TX, USA",
       degree: "Master of Science in Computer Science",
       date: "January 2023 - May 2024 ",
       gpa: "GPA: 4.0/4.0"
     },
     {
       institution: "Marmara University",
+      location: "Istanbul, Turkey",
       degree: "Bachelor of Science in Computer Science",
       date: "September 2016 - June 2021",
       gpa: "GPA: 3.14/4.0"
     }
-  ],
+  ] as Education[],
   articles: {
     hero: {
       title: "Exploring Ideas: Insights on Software, AI, and Personal Growth",

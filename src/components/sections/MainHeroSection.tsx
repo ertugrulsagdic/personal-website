@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/Container";
-import ProfilePicture from '@/images/ertugrul.jpeg'
+import ProfilePicture from '@/images/ertugrul.jpeg';
 import Link from "next/link";
 import {ImageWithFallback} from "@/components/ImageWithFallback";
 import { socialLinks } from "@/data";

@@ -5,11 +5,16 @@ import { InstagramIcon } from '@/components/icons/InstagramIcon';
 import { XIcon } from '@/components/icons/XIcon';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 
+export const resumeSocialLinks: SocialProfile[] = [
+    { name: 'Github', link: 'https://github.com/ertugrulsagdic', icon: GitHubIcon },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/ertugrulsagdic', icon: LinkedInIcon },
+];
+
+
 export const socialLinks: SocialProfile[] = [
     { name: 'Twitter', link: 'https://twitter.com/ertugrulsagdic', icon: XIcon },
     { name: 'Instagram', link: 'https://www.instagram.com/ertugrulsagdic/', icon: InstagramIcon },
-    { name: 'Github', link: 'https://github.com/ertugrulsagdic', icon: GitHubIcon },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/ertugrulsagdic', icon: LinkedInIcon },
+    ...resumeSocialLinks,
 ];
 
 export const skills: string[] = [
