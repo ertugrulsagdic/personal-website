@@ -35,7 +35,7 @@ export default {
       roles: "Throughout my career, I've navigated through diverse roles that have each contributed to my development:",
       mobileDevelopment: "Mobile Development: ",
       mobileDevelopmentDescription: "Engineered intuitive mobile interfaces to enhance user experience and functionality.",
-      softwareEngineering: "Software Engineering: ",
+      softwareEngineering: "Full Stack Software Engineering: ",
       softwareEngineeringDescriptionStart: "As a key full-stack engineer, I engineered the",
       softwareEngineeringDescriptionProject: "Continuous Improvement Software",
       softwareEngineeringDescriptionEnd: "project using Node JS and React JS to automate suggestion, kaizen, and near-miss workflows, serving over 1,000 users across four companies.",
@@ -64,11 +64,11 @@ export default {
           subDescriptions: [
             "Collaborated with Buckeye to analyze pump sensor data, achieving a comprehensive dataset for anomaly detection.",
             "Developed and fine-tuned various machine learning models for real-time anomaly detection, using a verified dataset.",
-            "Implemented a web-based UI with RESTful APIs, enabling predictive maintenance alerts based on model outputs.",
+            "Implemented a web-based UI and RESTful APIs, enabling predictive maintenance alerts based on model outputs.",
           ],
         },
         {
-          description: "Development of Dataset Generator and Evaluation of Deep Learning Models Supervised by Dr. Kockara",
+          description: "Development of Dataset Generator and Evaluation of Deep Learning Models Supervised by Dr. Kockara:",
           subDescriptions: [
             "Engineered TBPGen with C# and Unity Engine, generating 1,398 diverse total body photography images.",
             "Evaluated skin lesion detection and segmentation using Python/Pytorch across 13 deep learning models.",
@@ -119,7 +119,7 @@ export default {
         title: "Portfolio Website",
         description: "Designed and developed a personal portfolio website using Next.js and Tailwind CSS.",
         link: {
-          title: "esagdic.com",
+          title: "ertugrulsagdic.com",
           url: "",
           isIntenal: true,
         },
@@ -277,9 +277,9 @@ export default {
   ] as Education[],
   articles: {
     hero: {
-      title: "Exploring Ideas: Insights on Software, AI, and Personal Growth",
-      description: "Dive into my collection of articles where I share thoughts and experiences on software engineering, machine learning, and the journey of personal development. Each piece aims to provide clarity, inspiration, and practical knowledge to help you on your tech adventure.",
-      emptyDescription: "I'm currently in the process of crafting articles that delve into software engineering, machine learning, and personal development. Check back soon to explore insights and stories designed to inspire and educate. I'm excited to share them with you!"
+      title: "Exploring Ideas: On Software, Artificial Intelligence, and Personal Development",
+      description: "Dive into my collection of articles where I share thoughts and experiences on software engineering, machine learning, and the journey of personal development.",
+      emptyDescription: "I'm currently in the process of crafting articles that delve into software engineering, machine learning, and personal development. Check back soon to explore. I'm excited to share them with you!"
     }
   },
   projects: {
@@ -298,8 +298,8 @@ export default {
   },
   tools: {
     hero: {
-      title: "My Toolkit: From Code to Creativity",
-      description: "Browse through the tools that are integral to my daily workflow. From development frameworks and programming languages to project management applications, each tool is a key player in my pursuit of efficient and innovative software solutions."
+      title: "The tools I use: From Code to Creativity",
+      description: "Browse through the tools that are integral to my daily workflow, from development frameworks and programming languages to project management applications."
     },
     toolsList: [
       {
@@ -307,13 +307,13 @@ export default {
         tools: [
           {
             title: "Visual Studio Code",
-            description: "Advanced integrated development environment (IDE) with support for multiple languages and extensions.",
+            description: "I love using VS Code because it's fast and lets me customize it just how I like. It's perfect for all my coding projects.",
             href: "https://code.visualstudio.com/",
             imageURL: "https://code.visualstudio.com/assets/images/code-stable.png"
           },
           {
             title: "Jupyter Notebook",
-            description: "A must-have for data scientists, offering a mix of code, text, and visuals — perfect for sharing how-to's and research.",
+            description: "Jupyter Notebook is great for playing around with data. It makes it easy to see my work and share it with others.",
             href: "https://jupyter.org/",
             imageURL: "https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg"
           }
@@ -324,7 +324,7 @@ export default {
         tools: [
           {
             title: "Python",
-            description: "Versatile and powerful, it's my go-to for quick scripts, data analysis, and machine learning.",
+            description: "Python is super easy to use and really powerful. It's my go-to for quick scripts, data analysis, and machine learning.",
             href: "https://www.python.org/",
             imageURL: "https://www.python.org/static/img/python-logo-large.c36dccadd999.png?1576869008"
           },
@@ -336,7 +336,7 @@ export default {
           },
           {
             title: "TypeScript",
-            description: "JavaScript with syntax for types, it brings static type checking to web development, making the code less prone to runtime errors.",
+            description: "TypeScript is similar to JavaScript, except it adds static type checking to catch errors early. It's great for keeping my big projects organized and error-free.",
             href: "https://www.typescriptlang.org/",
             imageURL: "https://www.typescriptlang.org/icons/icon-48x48.png"
           }
@@ -347,7 +347,7 @@ export default {
         tools: [
           {
             title: "React",
-            description: "My framework of choice for building user interfaces, especially SPA that need rich interaction.",
+            description: "React helps me build websites quickly. I really like how it lets me reuse code to make things run smoothly.",
             href: "https://reactjs.org/",
             imageURL: "https://reactjs.org/favicon.ico"
           },
@@ -359,13 +359,13 @@ export default {
           },
           {
             title: "Next.js",
-            description: "A React framework that supports server-side rendering and static site generation, ideal for building performant web applications.",
+            description: "A React framework that supports server-side rendering and static site generation, ideal for building performant web applications. My framework of choice for building user interfaces at the moment.",
             href: "https://nextjs.org/",
             imageURL: "https://nextjs.org/static/favicon/favicon-32x32.png"
           },
           {
             title: "Tailwind CSS",
-            description: "A utility-first CSS framework that allows for rapid styling of applications without leaving your HTML.",
+            description: "Tailwind CSS makes styling websites super quick. I like how it lets me add designs right in my HTML",
             href: "https://tailwindcss.com/",
             imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png"
           }
@@ -376,36 +376,25 @@ export default {
         tools: [
           {
             title: "TensorFlow",
-            description: "A comprehensive platform that lets me build and train machine learning models at scale.",
+            description: "TensorFlow is awesome for anything machine learning. It's a big help when I'm working on complex projects",
             href: "https://www.tensorflow.org/",
             imageURL: "https://www.tensorflow.org/images/tf_logo_social.png"
           },
           {
             title: "PyTorch",
-            description: "Known for its flexibility and ease of use, it's my preferred tool for building deep learning projects.",
+            description: "PyTorch is easy to use for AI projects, especially when I'm trying out new ideas. It makes experimenting fun and simple.",
             href: "https://pytorch.org/",
             imageURL: "https://pytorch.org/favicon.ico"
           },
           {
-            title: "Keras",
-            description: "Runs atop TensorFlow and simplifies many machine learning workflows with its high-level APIs.",
-            href: "https://keras.io/",
-            imageURL: "https://keras.io/img/favicon.ico"
-          }
-        ]
-      },
-      {
-        title: "Data Manipulation and Analysis",
-        tools: [
-          {
             title: "Pandas",
-            description: "Ideal for structured data operations and manipulations, it's indispensable for any data-driven task.",
+            description: "Pandas is perfect for handling data. It makes organizing and looking through data so much easier.",
             href: "https://pandas.pydata.org/",
             imageURL: "https://pandas.pydata.org/static/img/favicon.ico"
           },
           {
             title: "NumPy",
-            description: "Provides support for large, multi-dimensional arrays and matrices, along with a collection of high-level mathematical functions.",
+            description: "NumPy is essential for math and big calculations. It's a huge help in almost all my data projects.",
             href: "https://numpy.org/",
             imageURL: "https://numpy.org/images/favicon.ico"
           }
@@ -416,51 +405,45 @@ export default {
         tools: [
           {
             title: "Git",
-            description: "Essential for any coding project, allowing for effective version control and collaboration.",
+            description: "Git keeps all my project versions in check. I like how it helps me manage changes and work with others easily.",
             href: "https://git-scm.com/",
             imageURL: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
           },
           {
             title: "Docker",
-            description: "Helps me encapsulate my environment and share it with my team, ensuring everyone is on the same page.",
+            description: "Docker is great for running my apps the same way everywhere. It saves me from a lot of headaches when I’m setting up environments.",
             href: "https://www.docker.com/",
             imageURL: "https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png"
           },
         ]
       },
       {
-        title: "Productivity and Utility Tools",
+        title: "Productivity Tools",
         tools: [
           {
             title: "Notion",
-            description: "A powerful organizing tool, Notion helps me keep my life and projects streamlined and well-documented.",
+            description: "Notion is where I keep all my notes and project plans. It's really flexible and helps me stay organized.",
             href: "https://www.notion.so/",
             imageURL: "https://www.notion.so/images/favicon.ico"
           },
-          {
-            title: "Trello",
-            description: "Perfect for organizing tasks and small projects, it's like a digital bulletin board for all my ideas and activities.",
-            href: "https://trello.com/",
-            imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCbY1-Um96CJj5CiENgILgx12Sc6ZV-NPLdw&s"
-          },
-          {
-            title: "Zoom",
-            description: "The go-to platform for virtual meetings, it's indispensable in today's remote work environment.",
-            href: "https://zoom.us/",
-            imageURL: "https://1000logos.net/wp-content/uploads/2021/06/Zoom-Logo.png"
-          },
-          {
-            title: "Slack",
-            description: "For team communication and collaboration, Slack is the tool that keeps us connected and productive.",
-            href: "https://slack.com/",
-            imageURL: "https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png"
-          },
-          {
-            title: "Discord",
-            description: "A versatile tool for communication and community building, Discord is perfect for both personal and professional use.",
-            href: "https://discord.com/",
-            imageURL: "https://aoineko.org/msxgl/images/a/af/Discord_Logo.png"
-          }
+          // {
+          //   title: "Zoom",
+          //   description: "The go-to platform for virtual meetings, it's indispensable in today's remote work environment.",
+          //   href: "https://zoom.us/",
+          //   imageURL: "https://1000logos.net/wp-content/uploads/2021/06/Zoom-Logo.png"
+          // },
+          // {
+          //   title: "Slack",
+          //   description: "For team communication and collaboration, Slack is the tool that keeps us connected and productive.",
+          //   href: "https://slack.com/",
+          //   imageURL: "https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png"
+          // },
+          // {
+          //   title: "Discord",
+          //   description: "A versatile tool for communication and community building, Discord is perfect for both personal and professional use.",
+          //   href: "https://discord.com/",
+          //   imageURL: "https://aoineko.org/msxgl/images/a/af/Discord_Logo.png"
+          // }
         ]
       },
       {
@@ -500,10 +483,10 @@ export default {
     ] as ToolCategory[],
   },
   resume: {
-    hero: {
-      title: "Resume",
-      description: "Here is my resume. You can also download it as a PDF."
-    }
+    experience: "Work Experience",
+    education: "Education",
+    skills: "Skills",
+    projects: "Projects",
   },
   footer: {
     title: "© 2024 Ertugrul Sagdic",

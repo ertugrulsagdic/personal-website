@@ -68,7 +68,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                 </div>
             </div>
             <div className="flex flex-col gap-y-3 print:gap-y-2">
-                <h2 className="sm:text-xl text-lg font-bold">Work Experience</h2>
+                <h2 className="sm:text-xl text-lg font-bold">{translations.resume.experience}</h2>
                 {
                     translations.experiences.map((experience: Experience) => (
                         <div key={experience.company} className="flex flex-col">
@@ -99,7 +99,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                 }
             </div>
             <div className="flex flex-col gap-y-3 print:gap-y-2">
-                <h2 className="sm:text-xl text-lg">Education</h2>
+                <h2 className="sm:text-xl text-lg">{translations.resume.education}</h2>
                 {
                     translations.educations.map((education: Education) => (
                         <div key={education.institution} className="flex flex-col gap-y-1 print:gap-y-0">
@@ -116,7 +116,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                 }
             </div>
             <div className="flex flex-col gap-y-3 print:gap-y-2">
-                <h2 className="sm:text-xl text-lg font-bold">Skills</h2>
+                <h2 className="sm:text-xl text-lg font-bold">{translations.resume.skills}</h2>
                 <div className="flex flex-wrap gap-1">
                     {skills.map((skill, index) => {
                         return (
@@ -131,7 +131,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
             </div>
 
             <div className="hidden flex-col gap-y-3 print:gap-y-2 print:flex">
-                <h2 className="sm:text-xl text-lg font-bold">Projects</h2>
+                <h2 className="sm:text-xl text-lg font-bold">{translations.resume.projects}</h2>
                 <div>
                     {
                         translations.allProjects.mostRecentProjects.map((project: Project) => (
@@ -160,7 +160,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
             </div>
 
             <div className="flex flex-col gap-y-3 print:gap-y-0 print-force-new-page print:hidden">
-                <h2 className="text-xl font-bold">Projects</h2>
+                <h2 className="text-xl font-bold">{translations.resume.projects}</h2>
                 <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
                     {
                         translations.allProjects.mostRecentProjects.map((project: Project) => (
