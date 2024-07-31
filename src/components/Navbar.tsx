@@ -94,7 +94,7 @@ export default function Navbar({ locale, translations }: {
                             </div>
                         </div>
                         <MobileNavButton className='pointer-events-auto md:hidden ' onClick={() => setIsOpen(true)} />
-                        <DesktopNavbar links={links} pathname={pathname} className='ml-1 pointer-events-auto hidden md:block' />
+                        <DesktopNavbar links={links} locale={locale} pathname={pathname} className='ml-1 pointer-events-auto hidden md:block' />
 
                         <div className='flex md:flex-1 justify-end '>
                             <div className='hidden md:block md:ml-2'>
@@ -116,8 +116,9 @@ export default function Navbar({ locale, translations }: {
     );
 }
 
-function DesktopNavbar({ links, pathname, className }: {
+function DesktopNavbar({ links, locale, pathname, className }: {
     links: NavbarLink[],
+    locale: string,
     pathname: string,
     className?: string
 }) {
@@ -128,6 +129,7 @@ function DesktopNavbar({ links, pathname, className }: {
                     {links.map((link) => {
                         return <NavItem
                             key={link.name}
+                            locale={locale}
                             link={link}
                             className={clsx(
                                 "flex flex-row gap-2 py-1 px-4 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white",
@@ -205,6 +207,7 @@ function MobileDrawer({ locale, links, translations, isOpen, render, onClose }: 
                                 key={link.name}>
                                 <NavItem
                                     link={link}
+                                    locale={locale}
                                     onClick={onClose}
                                     className={clsx(
                                         "flex flex-row gap-2 py-1 px-4 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white",
@@ -265,9 +268,10 @@ function SelectLanguage({ className, children, locale }: {
 
 
 function NavItem({
-    link, className, activeClassName, onClick
+    link, locale, className, activeClassName, onClick
 }: {
     link: { name: string, href: string, icon?: React.ElementType },
+    locale?: string,
     className?: string,
     activeClassName?: Object,
     onClick?: () => void
@@ -275,7 +279,7 @@ function NavItem({
     return (
         <li>
             <Link
-                href={link.href}
+                href={locale ? `/${locale}${link.href}` : link.href}
                 className={className}
                 onClick={onClick}
             >
