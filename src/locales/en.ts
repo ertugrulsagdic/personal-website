@@ -451,13 +451,13 @@ export default {
         tools: [
           {
             title: "Figma",
-            description: "Collaborative, powerful, and intuitive, Figma helps me design and prototype quickly and efficiently.",
+            description: "Figma is great for designing websites and apps with my team. It helps me design and prototype quickly and efficiently. My favorite feature is that it lets us see changes in real time.",
             href: "https://www.figma.com/",
             imageURL: "https://static.figma.com/app/icon/1/favicon.png"
           },
           {
             title: "Canva",
-            description: "Great for quickly creating aesthetic designs for web and print, Canva is a tool I often turn to for rapid visual creation.",
+            description: "Great for quickly creating aesthetic designs for web and print. It is a tool I often turn to for rapid visual creation.",
             href: "https://www.canva.com/",
             imageURL: "https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg"
           }
@@ -468,13 +468,13 @@ export default {
         tools: [
           {
             title: "Postman",
-            description: "Simplifies API development by allowing me to create, test, and modify APIs easily.",
+            description: "Postman is handy for checking APIs. I like how it makes setting up and testing new features straightforward.",
             href: "https://www.postman.com/",
             imageURL: "https://seeklogo.com/images/P/postman-logo-0087CA0D15-seeklogo.com.png"
           },
           {
             title: "Chrome Developer Tools",
-            description: "A vital set of utilities for debugging, modifying, and optimizing my web applications.",
+            description: "Chrome DevTools are a must for making sure my websites work well. They help me fix problems and make things run smoothly.",
             href: "https://developer.chrome.com/docs/devtools/",
             imageURL: "https://static-00.iconduck.com/assets.00/chrome-devtools-icon-1024x1024-bgoqb03p.png"
           }
