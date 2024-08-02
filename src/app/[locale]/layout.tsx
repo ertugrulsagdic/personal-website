@@ -5,6 +5,7 @@ import { Providers } from "../providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import getLocale from "@/locales";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default async function RootLayout({
                 {children}
               </main>
             <Footer translations={translations.footer} />
+            <SpeedInsights />
           </div>
         </Providers>
       </body>
