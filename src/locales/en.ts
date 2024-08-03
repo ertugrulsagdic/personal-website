@@ -62,9 +62,9 @@ export default {
         {
           description: "Development and Analysis of Anomaly Detection Systems for Buckeye Partners Supervised by Dr. Zhang:",
           subDescriptions: [
-            "Collaborated with Buckeye to analyze pump sensor data, achieving a comprehensive dataset for anomaly detection.",
-            "Developed and fine-tuned various machine learning models for real-time anomaly detection, using a verified dataset.",
-            "Implemented a web-based UI and RESTful APIs, enabling predictive maintenance alerts based on model outputs.",
+            "Collaborated with Buckeye to collect and analyze sensor data from pumps, creating a verified dataset.",
+            "Trained machine learning models, including AutoEncoders, TranAD, and SAMFormer, for data labeling, anomaly detection, and forecasting.",
+            "Created open-source RESTful APIs with Flask and a NextJS web interface to manage and display results.",
           ],
         },
         {
@@ -85,16 +85,16 @@ export default {
       location: "Istanbul, Turkey",
       bullets: [
         {
-          description: "Engineered the Continuous Improvement Software as a full-stack engineer using Node JS and React JS, serving over 1,000 users across four companies.",
+          description: "Spearheaded the development of the Continuous Improvement Software, transforming it from conceptual idea to functional application, including critical Suggestion, Kaizen, and Near Miss workflows which transitions processes to paperless and reduces process time by 60%.",
         },
         {
-          description: "Implemented Suggestion, Kaizen, and Near Miss workflows that transitioned processes to paperless and reducing process time by 60%.",
+          description: "Designed and implemented 200 JSON APIs using Node JS and 25+ user interfaces using React JS, including integration testing and unit testing to unsure system reliability.",
         },
         {
-          description: "Designed and maintained over 200 JSON APIs and 25+ user interfaces, enhancing system interactivity and user experience.",
+          description: "Utilized PostgreSQL, and MongoDB to manage and query databases, ensuring a 99.9% data integrity rate and facilitating smoother data retrieval and management processes.",
         },
         {
-          description: "Managed the project with Jira using agile methodologies, leading the team to achieve 100% on-time task delivery and a 25% increase in productivity.",
+          description: "Managed projects with Jira in a SCRUM-based Agile environment, ensuring frequent releases of functional code and achieving 100% on-time task delivery.",
         }
       ]
     },
@@ -487,6 +487,25 @@ export default {
     education: "Education",
     skills: "Skills",
     projects: "Projects",
+    coverLetter: "Cover Letter",
+    coverLetterContent: [
+        "Dear Hiring Manager,",
+        "With the utmost enthusiasm, I wish to express my interest in this position. As a highly motivated and skilled software engineer with over 2 years of diverse experience, I am excited about the opportunity to contribute to your team and make a meaningful impact on the development of innovative software solutions.",
+        "I am a software engineer with a passion for research, progress, and software development. My journey is defined by a dedication to continuous improvement and innovation. I aspire to become a well-known software engineer who contributes to the world with impactful software. I am passionate about finding balance and strength both in my personal and professional life. Guided by core values of ethics, responsibility, and honesty, I strive to make a positive impact through my work and actions. ",
+        "Key Highlights:",
+        "•	Technical Expertise: Proficient in Python, JavaScript, Node.js, React, C#, and Dart/Flutter.",
+        "•	Critical Thinking and Problem-Solving: Thriving in fast-paced environments, I excel in solving complex problems and delivering high-quality software solutions.",
+        "•	Project Management: Successfully spearheaded the development of software solutions, ensuring timely and within-scope project completion.",
+        "•	Agile Practices: Utilized agile methodologies to enhance team productivity and ensure efficient project execution.",
+        "•	Team Collaboration: Collaborated with diverse teams, including developers, DevOps, and designers, to deliver high-quality software.",
+        "•	Client Interaction: Worked closely with clients to understand their needs, gather feedback, and deliver satisfactory solutions.",
+        "What sets me apart as a candidate is my ability to think critically and solve complex problems. I thrive in fast-paced environments and enjoy collaborating with cross-functional teams to deliver high-quality software solutions. My experience with the development  of the Continuous Improvement Software at MDP Group showcased my ability to adapt to changing requirements and deliver results under tight deadlines. I am confident that my strong analytical skills, attention to detail, and dedication to continuous learning make me a great fit for this position.",
+        "In addition to my technical skills, I possess excellent communication and interpersonal skills, which I believe are essential for effective collaboration and teamwork. I am a proactive and motivated individual who is always eager to learn and grow. I am confident that my passion for software engineering and my drive to excel will enable me to contribute to [Company Name]'s success.",
+        "While my resume provides a history of my past experiences, there is considerably more to share, and I hope to arrange a time to meet so that I can learn more about what your company needs and how I can help bring great success to us both. I look forward to speaking with you in further detail about this open position. Thank you for considering my application.",
+        "Sincerely,",
+        "Ertugrul SAGDIC",
+        "ertugrulsagdic98@gmail.com",
+    ]
   },
   footer: {
     title: "© 2024 Ertugrul Sagdic",

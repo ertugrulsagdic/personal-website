@@ -17,12 +17,12 @@ export default async function Page({ params: { locale } }: { params: { locale: s
     return (
         <Container className="mt-16 sm:mt-32 print:mt-0 print:px-0 space-y-12 print:space-y-2">
             <div className="flex items-center justify-between">
-                <div className="flex-1 space-y-1.5">
+                <div className="flex-1 space-y-1.5 print:space-y-1">
                     <h1 className="max-w-md sm:text-2xl font-bold text-xl">{translations.info.name}</h1>
                     <p className="text-sm sm:text-base">
                         {translations.info.about}
                     </p>
-                    <p className="items-center text-sm sm:text-base">
+                    <p className="items-center text-sm sm:text-base print:hidden">
                         <Link
                             className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                             href={translations.info.locationLink}
@@ -47,12 +47,22 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                             ))
                         }
                     </div>
-                    <div className="hidden flex-row space-x-4 print:flex print:text-[12px]">
+                    <div className="hidden flex-row space-x-4 print:flex">
                         <Link href={`mailto:${translations.info.email}`}>
                             <span className="underline">{translations.info.email}</span>
                         </Link>
                         <Link href={`mailto:${translations.info.mobile}`}>
                             <span className="underline">{translations.info.mobile}</span>
+                        </Link>
+                        {
+                            resumeSocialLinks.map(({ name, link }) => (
+                                <Link key={name} href={link}>
+                                    <span className="underline">{name}</span>
+                                </Link>
+                            ))
+                        }
+                        <Link href={'www.ertugrulsagdic.com'}>
+                            <span className="underline">ertugrulsagdic.com</span>
                         </Link>
                     </div>
 
@@ -84,7 +94,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                             </div>
                             {
                                 experience.bullets.map(({ description, subDescriptions }) => (
-                                    <div key={description} className="flex flex-col gap-y-1">
+                                    <div key={description} className="flex flex-col gap-y-1 print:gap-y-0">
                                         <p className="text-sm">•  {description}</p>
                                         {
                                             subDescriptions?.map((subDescription) => (
@@ -184,6 +194,15 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                         ))
                     }
                 </div>
+            </div>
+
+            <div className={`hidden ${locale === 'en' ? 'print:flex' : ''} flex-col gap-y-3 print:gap-y-2 print-force-new-page`}>
+                <h2 className="sm:text-xl text-lg font-bold">{translations.resume.coverLetter}</h2>
+                {
+                    translations.resume.coverLetterContent.map((paragraph: string) => (
+                        <p key={paragraph} className="text-sm sm:text-base">{paragraph}</p>
+                    ))
+                }
             </div>
         </Container >
     )

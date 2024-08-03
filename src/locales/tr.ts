@@ -60,11 +60,11 @@ export default {
       location: "Beaumont, TX, ABD",
       bullets: [
         {
-          description: "Dr. Zhang Yönetiminde, Buckeye Partners için Pompa Sensör Verilerinin Analizi ve Anomali Tespit Sistemlerinin Geliştirilmesi:",
+          description: "Dr. Zhang'in Yönetiminde, Buckeye Partners için Pompa Sensör Verilerinin Analizi ve Anomali Tespit Sistemlerinin Geliştirilmesi:",
           subDescriptions: [
             "Buckeye ile işbirliği yaparak pompa sensör verilerini analiz ettim ve anomali tespiti için kapsamlı bir veri seti elde ettim.",
-            "Doğrulanmış veri setini kullanarak gerçek zamanlı anomali tespiti için çeşitli makine öğrenimi modelleri geliştirildi ve fine-tune edildi.",
-            "Model çıktılarına dayalı tahmini bakım uyarıları sağlayan web tabanlı bir kullanıcı arayüzü ve RESTful API'ler geliştirildi.",
+            "Veri etiketleme, anormallik tespiti ve tahmin için AutoEncoders, TranAD ve SAMFormer modellerini eğittim.",
+            "Flask kullanan açık kaynaklı RESTful API'leri ve sonuçları görüntülemek ve yönetmek için NextJS kullanan bir web arayüzü geliştirildi."
           ],
         },
         {
@@ -85,16 +85,16 @@ export default {
       location: "İstanbul, Türkiye",
       bullets: [
         {
-          description: "Full Stack mühendisi olarak, Node JS ve React JS kullanarak, Dört şirkette 1.000'den fazla kullanıcıya hizmet veren Sürekli İyileştirme Yazılımı geliştirdi.",
+          description: "Sürekli İyileştirme Yazılımının geliştirilmesine öncülük ederek, kavramsal fikirden, süreçleri kâğıtsız hale getiren ve süreç süresini %60 oranında azaltan kritik Öneri, Kaizen ve Yakın Kaçış iş akışlarını içeren işlevsel uygulamaya dönüştürdüm.",
         },
         {
-          description: "Süreçleri kâğıtsız hale getiren ve süreç süresini %60 oranında azaltan Öneri, Kaizen ve Ramak kala modülleri geliştirildi.",
+          description: "Node JS kullanarak 200 JSON API'si ve React JS kullanarak 25'ten fazla kullanıcı arayüzü geliştirdim; sistem güvenilirliğinden emin olmak için entegrasyon testleri ve birim testleri yaptım.",
         },
         {
-          description: "200'den fazla JSON API ve 25'ten fazla kullanıcı arayüzü geliştirdim ve sistem etkileşimini ve kullanıcı deneyimini artırdım.",
+          description: "Veritabanlarını yönetmek için PostgreSQL ve MongoDB'yi kullanarak %99,9 veri bütünlüğü oranı sağlandı ve sorunsuz veri sorguları elde ederek veritabanı yönetim süreçlerini kolaylaştırmış oldum.",
         },
         {
-          description: "Projeyi Jira ile agile metodolojilerle yöneterek ekibin %100 zamanında görev teslimi ve %25 üretkenlik artışı elde etmesini sağladım.",
+          description: "SCRUM tabanlı Agile ortamında Jira ile projeleri yöneterek, fonksiyonel kodun sık sık yayınlanmasını ve %100 zamanında görev teslimi sağlanmasını garanti altına aldım.",
         }
       ]
     },
@@ -108,7 +108,7 @@ export default {
           description: "Dart/Flutter kullanarak, mobil uygulama için 15'ten fazla kullanıcı arayüzü tasarlayıp geliştirdim.",
         },
         {
-          description: "Versiyon kontrolü için Git konusunda derin bilgi ve pratik uzmanlık kazandım. Bu durum, ekip iş akışını önemli ölçüde artırarak merge conflict'leri %60 azalttı.",
+          description: "Versiyon kontrolü için Git konusunda derin bilgi ve pratik uzmanlık kazandım.",
         }
       ]
     },
@@ -487,6 +487,8 @@ export default {
     education: "Eğitim",
     skills: "Beceriler",
     projects: "Projeler",
+    coverLetter: "Motivasyon Mektubu",
+    coverLetterContent: [],
   },
   footer: {
     title: "© 2024 Ertuğrul Sağdıç",
