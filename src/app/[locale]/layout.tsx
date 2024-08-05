@@ -15,6 +15,12 @@ const orbitron = Orbitron({ subsets: ["latin"] });
 // usage ${orbitron.className} in className
 
 export const metadata: Metadata = {
+  robots: {
+    index: true,
+    googleBot: {
+      index: true,
+    },
+  },
   title: "Ertugrul Sagdic",
   description: "Personal website of Ertugrul Sagdic, software engineer",
 };

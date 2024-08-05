@@ -57,6 +57,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                         {
                             resumeSocialLinks.map(({ name, link }) => (
                                 <Link key={name} href={link}>
+                                    {/* <span className="underline">{link.replace('https://', "").replace('www.', "")}</span> */}
                                     <span className="underline">{name}</span>
                                 </Link>
                             ))
@@ -127,14 +128,20 @@ export default async function Page({ params: { locale } }: { params: { locale: s
             </div>
             <div className="flex flex-col gap-y-3 print:gap-y-2">
                 <h2 className="sm:text-xl text-lg font-bold">{translations.resume.skills}</h2>
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1 print:gap-0">
                     {skills.map((skill, index) => {
                         return (
-                            <div
-                                key={skill}
-                                className="text-sm bg-zinc-100 dark:bg-zinc-700 dark:text-white px-2 py-1 rounded-md print:text-[10px]">
-                                {skill}
+                            <div className="flex"
+                                key={skill}>
+                                <div
+                                    className="text-sm bg-zinc-100 dark:bg-zinc-700 dark:text-white px-2 py-1 rounded-md print:text-[10px]">
+                                    {skill}
+                                </div>
+                                <div className="hidden print:flex">
+                                    {index !== skills.length - 1 && '|'}
+                                </div>
                             </div>
+
                         );
                     })}
                 </div>
