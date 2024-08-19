@@ -203,14 +203,16 @@ export default async function Page({ params: { locale } }: { params: { locale: s
                 </div>
             </div>
 
-            <div className={`hidden ${locale === 'en' ? 'print:flex' : ''} flex-col gap-y-3 print:gap-y-2 print-force-new-page`}>
-                <h2 className="sm:text-xl text-lg font-bold">{translations.resume.coverLetter}</h2>
-                {
-                    translations.resume.coverLetterContent.map((paragraph: string) => (
-                        <p key={paragraph} className="text-sm sm:text-base">{paragraph}</p>
-                    ))
-                }
-            </div>
+            {locale === 'en' && (
+                <div className={`hidden ${locale === 'en' ? 'print:flex' : ''} flex-col gap-y-3 print:gap-y-2 print-force-new-page`}>
+                    <h2 className="sm:text-xl text-lg font-bold">{translations.resume.coverLetter}</h2>
+                    {
+                        translations.resume.coverLetterContent.map((paragraph: string) => (
+                            <p key={paragraph} className="text-sm sm:text-base">{paragraph}</p>
+                        ))
+                    }
+                </div>
+            )}
         </Container >
     )
 
