@@ -6,8 +6,8 @@ import { ToolCategory } from "@/data/dataTypes/ToolCategory";
 export default {
   info: {
     name: "Ertugrul Sagdic",
-    location: "Houston, TX, USA",
-    locationLink: "https://www.google.com/maps/place/Houston,+TX",
+    location: "Istanbul, Turkey",
+    locationLink: "https://www.google.com/maps/place/istanbul",
     email: "ertugrulsagdic98@gmail.com",
     mobile: "+1 (409) 867 4970",
     about: "Detail-oriented Full Stack Engineer dedicated to building high-quality products.",
