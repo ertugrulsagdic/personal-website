@@ -75,7 +75,7 @@ export default function Navbar({ locale, translations }: {
                             <div
                                 className='h-12 w-12 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
                             >
-                                <Link 
+                                <Link
                                     href={`/${locale}`}
                                     aria-label={"Avatar Image"} className='pointer-events-auto'>
                                     <Image
@@ -135,10 +135,10 @@ function DesktopNavbar({ links, locale, pathname, className }: {
                             link={link}
                             className={clsx(
                                 "flex flex-row gap-2 py-1 px-4 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white",
-                                { 'bg-zinc-200 dark:bg-zinc-600': pathname === link.href }
+                                { 'bg-zinc-200 dark:bg-zinc-600': pathname === `/${locale}${link.href}` }
                             )}
                             activeClassName={
-                                { 'text-black dark:text-white': pathname === link.href }
+                                { 'text-black dark:text-white': pathname === `/${locale}${link.href}` }
                             }
                         />;
                     })}
@@ -246,7 +246,7 @@ function SelectLanguage({ className, children, locale }: {
 }) {
     const router = useRouter();
 
-    const changeUrl = (newLocale: string) => {   
+    const changeUrl = (newLocale: string) => {
         let currentUrl = window.location.href;
         let newUrl = currentUrl.replace(/\/(en|tr)(\/|)/, `/${newLocale}/`);
         router.push(newUrl);
@@ -262,7 +262,7 @@ function SelectLanguage({ className, children, locale }: {
             }
         >
             {children && <p>{children}:</p>}
-            <p className=''>{newLocale.toUpperCase()}</p> 
+            <p className=''>{newLocale.toUpperCase()}</p>
             <LanguageIcon className='w-6 h-6' />
         </button>
     );
