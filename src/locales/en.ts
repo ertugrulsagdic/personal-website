@@ -9,7 +9,7 @@ export default {
     location: "Istanbul, Turkey",
     locationLink: "https://www.google.com/maps/place/istanbul",
     email: "ertugrulsagdic98@gmail.com",
-    mobile: "+1 (409) 867 4970",
+    mobile: "+1 (539) 445 5645",
     about: "Detail-oriented Full Stack Engineer dedicated to building high-quality products.",
   },
   navbar: {

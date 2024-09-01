@@ -9,7 +9,7 @@ export default {
     location: "İstanbul, Türkiye",
     locationLink: "https://www.google.com/maps/place/istanbul",
     email: "ertugrulsagdic98@gmail.com",
-    mobile: "+1 (409) 867 4970",
+    mobile: "+90 (539) 445 5645",
     about: "Kendini yüksek kaliteli ürünler geliştirmeye adanmış, detay odaklı Full Stack Yazılım Mühendisi."
   },
   navbar: {
