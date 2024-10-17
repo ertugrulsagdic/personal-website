@@ -13,6 +13,7 @@ export default {
     about: "Detail-oriented Full Stack Engineer dedicated to building high-quality products.",
   },
   navbar: {
+    home: "Home",
     articles: "Articles",
     projects: "Projects",
     tools: "Tools",

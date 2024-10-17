@@ -13,6 +13,7 @@ export default {
     about: "Kendini yüksek kaliteli ürünler geliştirmeye adanmış, detay odaklı Full Stack Yazılım Mühendisi."
   },
   navbar: {
+    home: "Anasayfa",
     articles: "Makaleler",
     projects: "Projeler",
     tools: "Araçlar",
@@ -64,7 +65,7 @@ export default {
           subDescriptions: [
             "Buckeye ile işbirliği yaparak pompa sensör verilerini analiz ettim ve anomali tespiti için kapsamlı bir veri seti elde ettim.",
             "Veri etiketleme, anormallik tespiti ve tahmin için AutoEncoders, TranAD ve SAMFormer modellerini eğittim.",
-            "Flask kullanan açık kaynaklı RESTful API'leri ve sonuçları görüntülemek ve yönetmek için NextJS kullanan bir web arayüzü geliştirildi."
+            // "Flask kullanan açık kaynaklı RESTful API'leri ve sonuçları görüntülemek ve yönetmek için NextJS kullanan bir web arayüzü geliştirildi."
           ],
         },
         {

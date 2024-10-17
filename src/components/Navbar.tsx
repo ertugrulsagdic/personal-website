@@ -15,10 +15,12 @@ import LogoLight from '../images/logos/logo-light.png';
 import LogoDark from '../images/logos/logo-dark.png';
 import { NavbarLink } from '@/data/dataTypes/navbarLinks';
 import { LanguageIcon } from './icons/LanguageIcon';
+import {DownloadIcon} from '@/components/icons/DownloadIcon';
 
 export default function Navbar({ locale, translations }: {
     locale: string,
     translations: {
+        home: string,
         articles: string,
         projects: string,
         tools: string,
@@ -33,10 +35,11 @@ export default function Navbar({ locale, translations }: {
     const [prevScroll, setPrevScroll] = useState(0);
 
     const links: NavbarLink[] = [
-        { name: translations.articles, href: '/articles', icon: Blog },
-        { name: translations.projects, href: '/projects', icon: Projects },
-        { name: translations.tools, href: '/tools', icon: Tools },
-        { name: translations.resume, href: '/resume', icon: () => null },
+        { name: translations.home, href: '/', icon: () => null, isNewTab: false },
+        { name: translations.articles, href: '/articles', icon: Blog, isNewTab: false },
+        { name: translations.projects, href: '/projects', icon: Projects , isNewTab: false },
+        { name: translations.tools, href: '/tools', icon: Tools , isNewTab: false},
+        { name: translations.resume, href: '//drive.google.com/file/d/1mIvTkI8WgVNefSCsi76MJyI6zJeprBj5/view?usp=sharing', icon: DownloadIcon, isNewTab: true },
     ];
     // const { resolvedTheme } = useTheme();
 
@@ -133,6 +136,7 @@ function DesktopNavbar({ links, locale, pathname, className }: {
                             key={link.name}
                             locale={locale}
                             link={link}
+                            isNewTab={link.isNewTab}
                             className={clsx(
                                 "flex flex-row gap-2 py-1 px-4 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white",
                                 { 'bg-zinc-200 dark:bg-zinc-600': pathname === `/${locale}${link.href}` }
@@ -211,6 +215,7 @@ function MobileDrawer({ locale, links, translations, isOpen, render, onClose }: 
                                     link={link}
                                     locale={locale}
                                     onClick={onClose}
+                                    isNewTab={link.isNewTab}
                                     className={clsx(
                                         "flex flex-row gap-2 py-1 px-4 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white",
                                         { 'bg-zinc-200 dark:bg-zinc-600': pathname === link.href }
@@ -270,20 +275,23 @@ function SelectLanguage({ className, children, locale }: {
 
 
 function NavItem({
-    link, locale, className, activeClassName, onClick
+    link, locale, className, activeClassName, isNewTab, onClick
 }: {
     link: { name: string, href: string, icon?: React.ElementType },
     locale?: string,
     className?: string,
     activeClassName?: Object,
+    isNewTab?: boolean,
     onClick?: () => void
 }) {
     return (
         <li>
             <Link
-                href={locale ? `/${locale}${link.href}` : link.href}
+                href={locale && !link.href.startsWith('/') ? `/${locale}${link.href}` : link.href}
+                // if the link http then passHref is false
                 className={className}
                 onClick={onClick}
+                target={isNewTab ? "_blank" : "_self"}
             >
                 {link.icon && <link.icon className={clsx("w-4", activeClassName)} />}
                 <p className={clsx(activeClassName)}>{link.name}</p>
