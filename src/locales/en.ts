@@ -27,7 +27,20 @@ export default {
       title: "I'm Ertugrul Sagdic",
       subtitle: "Software Engineer",
       description: "I build software with a passion to make a meaningful impact with every line of code. My engineering journey is defined by pushing boundaries in research, progress, and continuous improvement.",
-      pictureAlt: "Profile Picture"
+      pictureAlt: "Profile Picture",
+      nameLead: "Ertugrul",
+      nameAccent: "Sagdic",
+      tagline: "a software engineer from Istanbul.",
+      eyebrow: "Hi there — a journal by",
+      kickerLeft: "The Masthead · Opening Essay",
+      kickerRight: "Filed under: Engineering",
+      figLabel: "Fig. 01",
+      figCaption: "The author, photographed on assignment — Istanbul.",
+      bylineBy: "By",
+      bylineDateline: "Dateline",
+      bylineDispatch: "Dispatch",
+      datelineValue: "Istanbul · TR",
+      continued: "Continued overleaf ↓"
     },
     aboutMe: {
       title: "More about me",
@@ -172,6 +185,24 @@ export default {
   ] as Experience[],
   allProjects: {
     mostRecentProjects: [
+      {
+        title: "SevenApps — Consumer AI Backend",
+        description: "Backend systems powering a portfolio of consumer-facing AI apps — Banger AI, FaceAI, AI Dub, ChatIn, and VideoAI — enabling AI-driven media generation, video processing, and real-time user interactions at scale.",
+        link: {
+          title: "sevenapps.co",
+          url: "https://sevenapps.co/",
+        },
+        techStack: ["Python", "FastAPI", "AWS", "Datadog", "Docker"],
+      },
+      {
+        title: "Marin Servisim",
+        description: "A cloud-based management SaaS for marine service businesses — handles customer records, service tracking, inventory, and automated e-invoicing with Turkish GİB integration. Mobile-responsive, multi-currency (TRY, USD, EUR, GBP).",
+        link: {
+          title: "marinservisim.com",
+          url: "https://marinservisim.com",
+        },
+        techStack: ["Next.js", "tRPC", "Supabase"],
+      },
       {
         title: "Portfolio Website",
         description: "Designed and developed a personal portfolio website using Next.js and Tailwind CSS.",
@@ -359,6 +390,17 @@ export default {
       description: "Browse through the tools that are integral to my daily workflow, from development frameworks and programming languages to project management applications."
     },
     toolsList: [
+      {
+        title: "AI & Agentic Tools",
+        tools: [
+          {
+            title: "Claude Code",
+            description: "My daily pair-programmer. Claude Code lives in my terminal and IDE — I use it to plan features, refactor across files, review diffs, and ship faster without losing the thread. Genuinely one of the most enjoyable tools I use.",
+            href: "https://www.anthropic.com/claude-code",
+            imageURL: "https://www.anthropic.com/favicon.ico"
+          }
+        ]
+      },
       {
         title: "Development Environments and Editors",
         tools: [

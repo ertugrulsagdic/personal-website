@@ -1,4 +1,4 @@
-import MainHeroSection from '@/components/sections/MainHeroSection';
+import FieldNotesHero from '@/components/sections/FieldNotesHero';
 import AboutMeSection from '@/components/sections/AboutMeSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
@@ -10,7 +10,7 @@ export default async function Home({ params: { locale } }: { params: { locale: s
 
   return (
     <div>
-      <MainHeroSection translations={translations.home.hero} />
+      <FieldNotesHero translations={translations.home.hero} />
       <AboutMeSection translations={translations.home.aboutMe} />
       <ExperienceSection translations={{
         title: translations.home.experience.title,

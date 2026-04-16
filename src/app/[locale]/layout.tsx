@@ -1,18 +1,34 @@
 import type { Metadata } from "next";
-import { Orbitron } from "next/font/google";
+import { Instrument_Serif, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import { Providers } from "../providers";
+import Masthead from "@/components/Masthead";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import getLocale from "@/locales";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
-const orbitron = Orbitron({ subsets: ["latin"] });
+const display = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
 
-// const inter = Inter({ subsets: ["latin"] });
+const sans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
-// usage ${orbitron.className} in className
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   robots: {
@@ -21,8 +37,8 @@ export const metadata: Metadata = {
       index: true,
     },
   },
-  title: "Ertugrul Sagdic",
-  description: "Personal website of Ertugrul Sagdic, software engineer",
+  title: "Ertugrul Sagdic — Field Notes",
+  description: "Field Notes — the engineering journal of Ertugrul Sagdic.",
 };
 
 export default async function RootLayout({
@@ -34,18 +50,14 @@ export default async function RootLayout({
 }>) {
   const translations = await getLocale(params.locale);
   return (
-    <html lang={params.locale}>
+    <html lang={params.locale} className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body
-        className={`flex h-full flex-col bg-zinc-50 dark:bg-black text-zinc-700 dark:text-zinc-300 antialiased print:bg-white print:dark:bg-inherit`}
+        className="grain flex h-full flex-col bg-paper dark:bg-graphite text-ink dark:text-cream antialiased print:bg-white print:dark:bg-inherit"
         suppressHydrationWarning={true}
       >
         <Providers>
-          <div className="fixed inset-0 flex justify-center sm:px-8 print:hidden">
-            <div className="flex w-full max-w-7xl lg:px-8">
-              <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
-            </div>
-          </div>
-          <div className="relative flex flex-col sm:px-8 min-h-lvh ">
+          <div className="relative z-10 flex flex-col min-h-lvh">
+            <Masthead locale={params.locale} />
             <Navbar locale={params.locale} translations={translations.navbar} />
             <main className="flex-1">{children}</main>
             <Footer translations={translations.footer} />
