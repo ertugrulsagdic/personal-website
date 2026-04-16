@@ -39,7 +39,7 @@ export default function Navbar({ locale, translations }: {
         { name: translations.articles, href: '/articles', icon: Blog, isNewTab: false },
         { name: translations.projects, href: '/projects', icon: Projects , isNewTab: false },
         { name: translations.tools, href: '/tools', icon: Tools , isNewTab: false},
-        { name: translations.resume, href: '//drive.google.com/file/d/1mIvTkI8WgVNefSCsi76MJyI6zJeprBj5/view?usp=sharing', icon: DownloadIcon, isNewTab: true },
+        { name: translations.resume, href: '//drive.google.com/file/d/1a8maIMUeWGFGF3pA8c-2uWSiBXi_5nT4/view', icon: DownloadIcon, isNewTab: true },
     ];
     // const { resolvedTheme } = useTheme();
 

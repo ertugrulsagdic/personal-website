@@ -54,10 +54,55 @@ export default {
   },
   experiences: [
     {
+      company: "SevenApps",
+      companyLink: "https://sevenapps.co/",
+      companyLinkedInLink: "https://www.linkedin.com/company/7apps/",
+      position: "Yazılım Mühendisi - Backend Ekip Lideri",
+      date: "Ağustos 2025 - Halen",
+      location: "İstanbul, Türkiye",
+      bullets: [
+        {
+          description: "Banger AI, FaceAI, AI Dub, ChatIn ve VideoAI gibi tüketiciye yönelik yapay zekâ ürünlerinde backend geliştirme ve operasyonlarına liderlik ederek mimari, ölçeklenebilirlik ve güvenilirlikten sorumluyum.",
+        },
+        {
+          description: "Dağıtık backend servisleri tasarladım ve yapay zekâ tabanlı medya üretimi, video işleme ve gerçek zamanlı kullanıcı etkileşimlerini ölçekli biçimde destekleyen Python/FastAPI ekosistemini geliştirdim.",
+        },
+        {
+          description: "AWS altyapısını (EC2, S3, SQS, container orchestration) ve Datadog ile gözlemlenebilirliği yönetiyor, dağıtım ve yayın süreçlerinde sürekli iyileştirmeler gerçekleştiriyorum.",
+        },
+        {
+          description: "Teknik planlama, kod ve tasarım incelemeleri ile ürün, mobil ve DevOps ekipleri arasındaki iş birliğini koordine ederek backend tesliminin sürdürülmesini sağlıyorum.",
+        }
+      ]
+    },
+    {
+      company: "SevenApps",
+      companyLink: "https://sevenapps.co/",
+      companyLinkedInLink: "https://www.linkedin.com/company/7apps/",
+      position: "Yazılım Mühendisi",
+      date: "Kasım 2024 - Temmuz 2025",
+      location: "İstanbul, Türkiye",
+      bullets: [
+        {
+          description: "Ölçeklenebilir Python mikroservisleri tasarlayıp geliştirdim, ML pipeline'larının bakımını üstlendim ve modelleri üretime etkin şekilde dağıttım.",
+        },
+        {
+          description: "AWS ortamlarını (EC2, S3, SQS, container orchestration) yapılandırıp yönettim.",
+        },
+        {
+          description: "Mobil uygulamalar için güvenli ve verimli sunucu tarafı API'ler geliştirdim.",
+        },
+        {
+          description: "Backend performansını optimize ettim, güvenlik önlemlerini güçlendirdim ve uygulama performansını izleyerek verimlilik iyileştirmeleri sağladım.",
+        }
+      ]
+    },
+    {
       company: "Lamar Üniversitesi",
       companyLink: "https://www.lamar.edu/arts-sciences/computer-science/index.html",
+      companyLinkedInLink: "https://www.linkedin.com/school/lamar-university/",
       position: "Araştırma Asistanı",
-      date: "Ocak 2023 - Halen",
+      date: "Eylül 2023 - Eylül 2024",
       location: "Beaumont, TX, ABD",
       bullets: [
         {
@@ -65,9 +110,18 @@ export default {
           subDescriptions: [
             "Buckeye ile işbirliği yaparak pompa sensör verilerini analiz ettim ve anomali tespiti için kapsamlı bir veri seti elde ettim.",
             "Veri etiketleme, anormallik tespiti ve tahmin için AutoEncoders, TranAD ve SAMFormer modellerini eğittim.",
-            // "Flask kullanan açık kaynaklı RESTful API'leri ve sonuçları görüntülemek ve yönetmek için NextJS kullanan bir web arayüzü geliştirildi."
           ],
         },
+      ]
+    },
+    {
+      company: "Lamar Üniversitesi",
+      companyLink: "https://www.lamar.edu/arts-sciences/computer-science/index.html",
+      companyLinkedInLink: "https://www.linkedin.com/school/lamar-university/",
+      position: "Araştırma Asistanı",
+      date: "Ocak 2023 - Ağustos 2023",
+      location: "Beaumont, TX, ABD",
+      bullets: [
         {
           description: "Dr. Kockara'nın Yönetiminde, Veri Seti Üreticisinin Geliştirilmesi ve Derin Öğrenme Modellerinin Değerlendirilmesi:",
           subDescriptions: [
@@ -81,8 +135,9 @@ export default {
     {
       company: "MDP Group",
       companyLink: "https://www.mdpgroup.com/",
+      companyLinkedInLink: "https://www.linkedin.com/company/digitalmdp/",
       position: "Full Stack Yazılım Mühendisi",
-      date: "Temmuz 2021 - Ocak 2023",
+      date: "Ağustos 2021 - Ocak 2023",
       location: "İstanbul, Türkiye",
       bullets: [
         {

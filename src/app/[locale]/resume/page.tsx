@@ -81,8 +81,8 @@ export default async function Page({ params: { locale } }: { params: { locale: s
             <div className="flex flex-col gap-y-3 print:gap-y-2">
                 <h2 className="sm:text-xl text-lg font-bold">{translations.resume.experience}</h2>
                 {
-                    translations.experiences.map((experience: Experience) => (
-                        <div key={experience.company} className="flex flex-col">
+                    translations.experiences.map((experience: Experience, index: number) => (
+                        <div key={`${experience.company}-${index}`} className="flex flex-col">
                             <div className="mb-1 print:mb-0">
                                 <div className="flex items-center justify-between">
                                     <h3 className="sm:text-base text-sm font-bold">{experience.company}</h3>

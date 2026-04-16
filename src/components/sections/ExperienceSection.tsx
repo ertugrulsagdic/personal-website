@@ -3,6 +3,7 @@
 import Container from "@/components/Container"
 import { useState } from 'react';
 import { Experience } from "@/data/dataTypes/experiences";
+import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import Link from "next/link";
 
 
@@ -23,7 +24,7 @@ export default function ExperienceSection({translations} : {
                         className="flex flex-rows lg:flex-col overflow-x-auto [&::-webkit-scrollbar]:hidden">
                         {translations.experiences.map((experience, index) => (
                             <button
-                                key={experience.company}
+                                key={`${experience.company}-${index}`}
                                 className={`space-y-2 ring-color-500 border-b py-4 px-6 dark:hover:bg-zinc-700 hover:bg-zinc-200 hover:text-black dark:hover:text-white
                                     ${currentExperience === index ? ' border-black dark:border-zinc-100 text-black dark:text-white' : 'dark:border-zinc-500 border-zinc-300'}
                                     lg:border-l min-w-fit lg:border-b-0
@@ -36,13 +37,13 @@ export default function ExperienceSection({translations} : {
                     </div>
                     {translations.experiences.map((experience, index) => (
                         <div
-                            key={experience.company}
+                            key={`${experience.company}-${index}`}
                             className={`lg:ml-8 animate-fade col-span-3 space-y-4 ${currentExperience === index ? '' : 'hidden'}`}
                         >
                             <div>
                                 <div className="flex flex-rows space-x-2">
                                     <h4 className="dark:text-zinc-400 text-zinc-600">{experience.position}</h4>
-                                    <h4>
+                                    <h4 className="inline-flex items-center gap-2">
                                         @
                                         <Link
                                             href={experience.companyLink ? experience.companyLink : ''}
@@ -50,6 +51,16 @@ export default function ExperienceSection({translations} : {
                                         >
                                             {experience.company}
                                         </Link>
+                                        {experience.companyLinkedInLink && (
+                                            <Link
+                                                href={experience.companyLinkedInLink}
+                                                target="_blank"
+                                                aria-label={`${experience.company} on LinkedIn`}
+                                                className="inline-flex opacity-70 hover:opacity-100"
+                                            >
+                                                <LinkedInIcon className="size-4 fill-current" />
+                                            </Link>
+                                        )}
                                     </h4>
                                 </div>
                                 <p>{experience.date}</p>

@@ -9,7 +9,7 @@ export default {
     location: "Istanbul, Turkey",
     locationLink: "https://www.google.com/maps/place/istanbul",
     email: "ertugrulsagdic98@gmail.com",
-    mobile: "+1 (539) 445 5645",
+    mobile: "+90 (539) 445 5645",
     about: "Detail-oriented Full Stack Engineer dedicated to building high-quality products.",
   },
   navbar: {
@@ -54,10 +54,55 @@ export default {
   },
   experiences: [
     {
+      company: "SevenApps",
+      companyLink: "https://sevenapps.co/",
+      companyLinkedInLink: "https://www.linkedin.com/company/7apps/",
+      position: "Software Engineer - Backend Team Lead",
+      date: "August 2025 - Present",
+      location: "Istanbul, Turkey",
+      bullets: [
+        {
+          description: "Leading backend development and operations across consumer-facing AI products (Banger AI, FaceAI, AI Dub, ChatIn, VideoAI), owning architecture, scalability, and reliability.",
+        },
+        {
+          description: "Designed distributed backend services and evolved a Python/FastAPI ecosystem supporting AI-driven media generation, video processing, and real-time user interactions at scale.",
+        },
+        {
+          description: "Manage AWS infrastructure (EC2, S3, SQS, container orchestration) and observability with Datadog, driving continuous improvements to deployment and release workflows.",
+        },
+        {
+          description: "Coordinate backend delivery through technical planning, code and design reviews, and cross-team collaboration with product, mobile, and DevOps.",
+        }
+      ]
+    },
+    {
+      company: "SevenApps",
+      companyLink: "https://sevenapps.co/",
+      companyLinkedInLink: "https://www.linkedin.com/company/7apps/",
+      position: "Software Engineer",
+      date: "November 2024 - July 2025",
+      location: "Istanbul, Turkey",
+      bullets: [
+        {
+          description: "Designed and implemented scalable Python microservices, maintained ML pipelines, and deployed models to production.",
+        },
+        {
+          description: "Configured and managed AWS environments, including EC2, S3, SQS, and container orchestration.",
+        },
+        {
+          description: "Developed APIs for mobile applications, ensuring secure and efficient server-side software.",
+        },
+        {
+          description: "Optimized backend performance, enhanced security, and monitored applications to deliver key efficiency improvements.",
+        }
+      ]
+    },
+    {
       company: "Lamar University",
       companyLink: "https://www.lamar.edu/arts-sciences/computer-science/index.html",
+      companyLinkedInLink: "https://www.linkedin.com/school/lamar-university/",
       position: "Research Assistant",
-      date: "January 2023 - Present",
+      date: "September 2023 - September 2024",
       location: "Beaumont, TX, USA",
       bullets: [
         {
@@ -68,6 +113,16 @@ export default {
             "Created open-source RESTful APIs with Flask and a NextJS web interface to manage and display results.",
           ],
         },
+      ]
+    },
+    {
+      company: "Lamar University",
+      companyLink: "https://www.lamar.edu/arts-sciences/computer-science/index.html",
+      companyLinkedInLink: "https://www.linkedin.com/school/lamar-university/",
+      position: "Research Assistant",
+      date: "January 2023 - August 2023",
+      location: "Beaumont, TX, USA",
+      bullets: [
         {
           description: "Development of Dataset Generator and Evaluation of Deep Learning Models Supervised by Dr. Kockara:",
           subDescriptions: [
@@ -81,8 +136,9 @@ export default {
     {
       company: "MDP Group",
       companyLink: "https://www.mdpgroup.com/",
+      companyLinkedInLink: "https://www.linkedin.com/company/digitalmdp/",
       position: "Full Stack Software Engineer",
-      date: "July 2021 - January 2023",
+      date: "August 2021 - January 2023",
       location: "Istanbul, Turkey",
       bullets: [
         {
@@ -491,7 +547,7 @@ export default {
     coverLetter: "Cover Letter",
     coverLetterContent: [
         "Dear Hiring Manager,",
-        "With the utmost enthusiasm, I wish to express my interest in this position. As a highly motivated and skilled software engineer with over 2 years of diverse experience, I am excited about the opportunity to contribute to your team and make a meaningful impact on the development of innovative software solutions.",
+        "With the utmost enthusiasm, I wish to express my interest in this position. As a highly motivated and skilled software engineer with over 4 years of diverse experience, I am excited about the opportunity to contribute to your team and make a meaningful impact on the development of innovative software solutions.",
         "I am a software engineer with a passion for research, progress, and software development. My journey is defined by a dedication to continuous improvement and innovation. I aspire to become a well-known software engineer who contributes to the world with impactful software. I am passionate about finding balance and strength both in my personal and professional life. Guided by core values of ethics, responsibility, and honesty, I strive to make a positive impact through my work and actions. ",
         "Key Highlights:",
         "•	Technical Expertise: Proficient in Python, JavaScript, Node.js, React, C#, and Dart/Flutter.",

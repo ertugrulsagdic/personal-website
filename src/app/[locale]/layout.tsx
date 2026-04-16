@@ -5,8 +5,8 @@ import { Providers } from "../providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import getLocale from "@/locales";
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-  children, params
+  children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
@@ -38,7 +39,6 @@ export default async function RootLayout({
         className={`flex h-full flex-col bg-zinc-50 dark:bg-black text-zinc-700 dark:text-zinc-300 antialiased print:bg-white print:dark:bg-inherit`}
         suppressHydrationWarning={true}
       >
-
         <Providers>
           <div className="fixed inset-0 flex justify-center sm:px-8 print:hidden">
             <div className="flex w-full max-w-7xl lg:px-8">
@@ -46,16 +46,14 @@ export default async function RootLayout({
             </div>
           </div>
           <div className="relative flex flex-col sm:px-8 min-h-lvh ">
-              <Navbar locale={params.locale} translations={translations.navbar} />
-              <main className="flex-1">
-                {children}
-              </main>
+            <Navbar locale={params.locale} translations={translations.navbar} />
+            <main className="flex-1">{children}</main>
             <Footer translations={translations.footer} />
             <SpeedInsights />
             <Analytics />
           </div>
         </Providers>
       </body>
-    </html >
+    </html>
   );
 }
