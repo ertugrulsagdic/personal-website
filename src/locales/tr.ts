@@ -27,7 +27,20 @@ export default {
       title: "Ben Ertuğrul Sağdıç",
       subtitle: "Yazılım Mühendisi",
       description: "Her satır kodla anlamlı bir etki yaratma tutkusuyla yazılım geliştiriyorum. Mühendislik yolculuğum, araştırma, ilerleme ve sürekli iyileştirme sınırlarını zorlamak üzerine tanımlanır.",
-      pictureAlt: "Profil Resmi"
+      pictureAlt: "Profil Resmi",
+      nameLead: "Ertuğrul",
+      nameAccent: "Sağdıç",
+      tagline: "İstanbul'dan bir yazılım mühendisi.",
+      eyebrow: "Selamlar — bir günlük, yazan",
+      kickerLeft: "Künye · Açılış Yazısı",
+      kickerRight: "Kategori: Mühendislik",
+      figLabel: "Şek. 01",
+      figCaption: "Yazar, görev sırasında fotoğraflandı — İstanbul.",
+      bylineBy: "Yazan",
+      bylineDateline: "Tarih / Yer",
+      bylineDispatch: "Görev",
+      datelineValue: "İstanbul · TR",
+      continued: "Devamı arkada ↓"
     },
     aboutMe: {
       title: "Benim hakkımda daha fazla",
@@ -171,6 +184,24 @@ export default {
   ] as Experience[],
   allProjects: {
     mostRecentProjects: [
+      {
+        title: "SevenApps — Tüketici Yapay Zekâ Backend'i",
+        description: "Banger AI, FaceAI, AI Dub, ChatIn ve VideoAI gibi tüketiciye yönelik yapay zekâ uygulamalarının omurgasını oluşturan backend sistemleri — ölçekli yapay zekâ destekli medya üretimi, video işleme ve gerçek zamanlı kullanıcı etkileşimleri.",
+        link: {
+          title: "sevenapps.co",
+          url: "https://sevenapps.co/",
+        },
+        techStack: ["Python", "FastAPI", "AWS", "Datadog", "Docker"],
+      },
+      {
+        title: "Marin Servisim",
+        description: "Deniz motoru yetkili servisleri için bulut tabanlı işletme yönetim platformu — müşteri kayıtları, servis takibi, stok yönetimi ve GİB entegrasyonlu otomatik e-faturalama. Mobil uyumlu, çoklu para birimi (TL, USD, EUR, GBP) destekli.",
+        link: {
+          title: "marinservisim.com",
+          url: "https://marinservisim.com",
+        },
+        techStack: ["Next.js", "tRPC", "Supabase"],
+      },
       {
         title: "Portföy Web Sitesi",
         description: "Kişisel portföy web sitesini Next.js ve Tailwind CSS kullanarak tasarladım ve geliştirdim.",
@@ -358,6 +389,17 @@ export default {
       description: "Geliştirme ortamları ve programlama dillerinden proje yönetimi uygulamalarına kadar, günlük iş akışımın ayrılmaz bir parçası olan araçlara göz atın."
     },
     toolsList: [
+      {
+        title: "Yapay Zekâ ve Ajan Araçları",
+        tools: [
+          {
+            title: "Claude Code",
+            description: "Günlük eşli programlama arkadaşım. Claude Code terminalimde ve editörümde yaşıyor — özellik planlamak, dosyalar arası refactor yapmak, diff gözden geçirmek ve odağı kaybetmeden daha hızlı ilerlemek için kullanıyorum. Gerçekten en keyif aldığım araçlardan biri.",
+            href: "https://www.anthropic.com/claude-code",
+            imageURL: "https://www.anthropic.com/favicon.ico"
+          }
+        ]
+      },
       {
         title: "Geliştirme Ortamları ve Editörler",
         tools: [
