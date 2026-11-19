@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "next build && npx wrangler@4 dev",
+    "deploy": "next build && npx wrangler@4 deploy"
   },
   "dependencies": {
     "@vercel/analytics": "^1.3.1",

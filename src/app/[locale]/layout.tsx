@@ -30,6 +30,12 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "tr" }];
+}
+
 export const metadata: Metadata = {
   robots: {
     index: true,
