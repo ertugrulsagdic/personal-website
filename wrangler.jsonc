@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "personal-website",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  // Static export (next build -> out/). Asset requests are free and have no CPU limit.
+  // The Worker runs only when no file matches (locale redirect, 404).
+  "assets": { "directory": "out", "binding": "ASSETS" },
+  "routes": [
+    { "pattern": "ertugrulsagdic.com", "custom_domain": true },
+    { "pattern": "www.ertugrulsagdic.com", "custom_domain": true }
+  ]
+}
